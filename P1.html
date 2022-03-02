@@ -71,7 +71,7 @@
         </div>
     </div>
 
-    <div class="mb-5" onclick="show()">
+    <div class="m-1" onclick="show()">
         <div>
             <a data-role="button" class="btn btn-danger" onclick="addChar(1)">1</a>
             <a data-role="button" class="btn btn-danger" onclick="addChar(2)">2</a>
@@ -83,8 +83,8 @@
             <a data-role="button" class="btn btn-danger" onclick="addChar(8)">8</a>
             <a data-role="button" class="btn btn-danger" onclick="addChar(9)">9</a>
             <a data-role="button" class="btn btn-danger" onclick="addChar(0)">0</a>
-            <a data-role="button" class="btn btn-dark" onclick="addChar('upperCase')">
-                <i class="bi-arrow"></i>
+            <a data-role="button" class="btn btn-dark" onclick="toggleShift()">
+                <i class="bi-arrow-up"></i>
             </a>
           </div>
           <div>
@@ -113,7 +113,9 @@
             <a data-role="button" class="btn btn-danger" onclick="addChar('k')">K</a>
             <a data-role="button" class="btn btn-danger" onclick="addChar('l')">L</a>
             <a data-role="button" class="btn btn-dark" onclick="enter()">Enter</a>
-            <a data-role="button" class="btn btn-danger" onclick='addChar("#&34")'></a>
+            <a data-role="button" class="btn btn-danger" onclick="addChar('')">
+                <i class="bi bi-arrow-up"></i>
+            </a>
           </div>
     </div>
 
