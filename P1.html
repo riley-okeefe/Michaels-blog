@@ -10,33 +10,34 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="P1.css">
-
+    <script src="./P1.js"></script>
     <title>P1</title>
 </head>
 
 <body>
-    <div class="row m-1">
-        <div class="col-auto header">
+    <div class="row">
+        <div class="col-sm-2 headerText">
             <span>Blog Name</span>
         </div>
-        <div class="col-auto header">
+        <div class="col-2 headerText">
             <span>Edit</span>
         </div>
-        <div class="col-auto header">
+        <div class="col-2 headerText">
             <span>Publish</span>
         </div>
     </div>
 
     <div class="row m-2">
-        <div class="col-auto" style="padding-top: 4px;">
-            <input id="blog1" placeholder="<type name>" type="text" class="inputSize">
+        <div class="col-2" style="padding-top: 4px;">
+            <input placeholder="<type name>" type="text" class="inputSize">
         </div>
-        <div class="col-auto">
-            <div id="firstEditSwitch" onclick="display('firstEditSwitch','secondEditSwitch','thirdEditSwitch');" class="form-check form-switch">
-                <input class="form-check-input inputSize" type="checkbox" role="switch">
+        <div class="col-2">
+            <div class="form-check form-switch" id="firstEditSwitch">
+                <input class="form-check-input inputSize" onclick="hide('secondEditSwitch', 'thirdEditSwitch');"
+                    type="checkbox" role="switch">
             </div>
         </div>
-        <div class="col-auto">
+        <div class="col-2">
             <div class="form-check form-switch">
                 <input class="form-check-input inputSize" type="checkbox" role="switch">
             </div>
@@ -44,35 +45,39 @@
     </div>
 
     <div class="row m-2">
-        <div class="col-auto" style="padding-top: 4px;">
+        <div class="col-2" style="padding-top: 4px;">
             <input placeholder="<type name>" type="text" class="inputSize">
         </div>
-        <div class="col-auto">
-            <div id="secondEditSwitch" onclick="display('secondEditSwitch','firstEditSwitch','thirdEditSwitch');" class="form-check form-switch">
-                <input class="form-check-input inputSize" type="checkbox" role="switch">
+        <div class="col-2">
+            <div class="form-check form-switch" id="secondEditSwitch">
+                <input class="form-check-input inputSize" onclick="hide('firstEditSwitch', 'thirdEditSwitch');"
+                    type="checkbox" role="switch">
             </div>
         </div>
-        <div class="col-auto">
+        <div class="col-2">
             <div class="form-check form-switch">
                 <input class="form-check-input inputSize" type="checkbox" role="switch">
             </div>
         </div>
     </div>
+
     <div class="row m-2">
-        <div class="col-auto" style="padding-top: 4px;">
+        <div class="col-2" style="padding-top: 4px;">
             <input placeholder="<type name>" type="text" class="inputSize">
         </div>
-        <div class="col-auto">
-            <div id="thirdEditSwitch" onclick="display('thirdEditSwitch','firstEditSwitch','secondEditSwitch');" class="form-check form-switch">
-                <input class="form-check-input inputSize" type="checkbox" role="switch">
+        <div class="col-2">
+            <div class="form-check form-switch" id="thirdEditSwitch">
+                <input class="form-check-input inputSize" onclick="hide('firstEditSwitch', 'secondEditSwitch');"
+                    type="checkbox" role="switch">
             </div>
         </div>
-        <div class="col-auto">
+        <div class="col-2">
             <div class="form-check form-switch">
                 <input class="form-check-input inputSize" type="checkbox" role="switch">
             </div>
         </div>
     </div>
+
     <div class="m-4" onclick="show()">
         <div class="m-1">
             <a data-role="button" class="btn btn-danger" onclick="addChar(1)">1</a>
