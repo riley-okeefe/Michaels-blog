@@ -11,68 +11,67 @@
     
     <title>P1</title>
 </head>
+
 <body>
-    <div class="row m-4">
-        <div class="col header">
+    <div class="row m-1">
+        <div class="col-auto header">
             <span>Blog Name</span>
         </div>
-        <div class="col header">
+        <div class="col-auto header">
             <span>Edit</span>
         </div>
-        <div class="col header">
+        <div class="col-auto header">
             <span>Publish</span>
         </div>
     </div>
 
-    <div class="row m-4">
-        <div class="col">
-            <input id="blog1" placeholder="<type name>" type="text" class="size">
+    <div class="row m-2">
+        <div class="col-auto" style="padding-top: 4px;">
+            <input id="blog1" placeholder="<type name>" type="text" class="inputSize">
         </div>
-        <div class="col">
+        <div class="col-auto">
             <div class="form-check form-switch">
-                <input id="blog1e" class="form-check-input size" type="checkbox" role="switch" id="switch1a">
+                <input id="blog1e" class="form-check-input inputSize" type="checkbox" role="switch" id="switch1a">
             </div>
         </div>
-        <div class="col">
+        <div class="col-auto">
             <div class="form-check form-switch">
-                <input id="blog1p" class="form-check-input size" type="checkbox" role="switch" id="switch1b">
-            </div>
-        </div>
-    </div>
-
-    <div class="row m-4">
-        <div class="col">
-            <input id="blog2" placeholder="<type name>" type="text" class="size">
-        </div>
-        <div class="col">
-            <div class="form-check form-switch">
-                <input id="blog2e" class="form-check-input size" type="checkbox" role="switch" id="switch2a">
-            </div>
-        </div>
-        <div class="col">
-            <div class="form-check form-switch">
-                <input id="blog2p" class="form-check-input size" type="checkbox" role="switch" id="switch2b">
+                <input id="blog1p" class="form-check-input inputSize" type="checkbox" role="switch" id="switch1b">
             </div>
         </div>
     </div>
 
-    <div class="row m-4">
-        <div class="col">
-            <input id="blog3" placeholder="<type name>" type="text" class="size">
+    <div class="row m-2">
+        <div class="col-auto" style="padding-top: 4px;">
+            <input id="blog2" placeholder="<type name>" type="text" class="inputSize">
         </div>
-        <div class="col">
+        <div class="col-auto">
             <div class="form-check form-switch">
-                <input id="blog3e" class="form-check-input size" type="checkbox" role="switch" id="switch3a">
+                <input id="blog2e" class="form-check-input inputSize" type="checkbox" role="switch" id="switch2a">
             </div>
         </div>
-        <div class="col">
+        <div class="col-auto">
             <div class="form-check form-switch">
-                <input id="blog3p" class="form-check-input size" type="checkbox" role="switch" id="switch3b">
+                <input id="blog2p" class="form-check-input inputSize" type="checkbox" role="switch" id="switch2b">
             </div>
         </div>
     </div>
-
-    <div class="m-1" onclick="show()">
+    <div class="row m-2">
+        <div class="col-auto" style="padding-top: 4px;">
+            <input id="blog3" placeholder="<type name>" type="text" class="inputSize">
+        </div>
+        <div class="col-auto">
+            <div class="form-check form-switch">
+                <input id="blog3e" class="form-check-input inputSize" type="checkbox" role="switch" id="switch3a">
+            </div>
+        </div>
+        <div class="col-auto">
+            <div class="form-check form-switch">
+                <input id="blog3p" class="form-check-input inputSize" type="checkbox" role="switch" id="switch3b">
+            </div>
+        </div>
+    </div>
+    <div class="m-4" onclick="show()">
         <div class="m-1">
             <a data-role="button" class="btn btn-danger" onclick="addChar(1)">1</a>
             <a data-role="button" class="btn btn-danger" onclick="addChar(2)">2</a>

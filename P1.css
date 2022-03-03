@@ -1,22 +1,26 @@
 #shift {
-    width: 70px;
+  width: 70px;
 }
 #backspace {
-    width: 60px;
+  width: 60px;
 }
 #quotationMarks {
-    width: 35px;
+  width: 35px;
 }
-
-
 
 .header {
   color: blue;
-  font-size: 25px;
+  font-size: 20px;
+  width: 175px;
+  text-align: center;
 }
 
-.size {
-  display: block;
-  height: 30px;
-  min-width: 200px;
+.inputSize {
+  height: 35px;
+  min-width: 150px;
+  width: 150px;
+}
+
+.paddingKey {
+  padding-top: 10px;
 }
