@@ -33,7 +33,7 @@
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="firstEditSwitch">
-                <input class="form-check-input inputSize" onclick="hide('secondEditSwitch', 'thirdEditSwitch');"
+                <input class="form-check-input inputSize" onclick="showKeyboard('keyboard'); hide('secondEditSwitch', 'thirdEditSwitch');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -78,7 +78,7 @@
         </div>
     </div>
 
-    <div class="m-4" onclick="show()">
+    <div class="m-4" id="keyboard" style="display: none;">
         <div class="m-1">
             <a data-role="button" class="btn btn-danger" onclick="addChar(1)">1</a>
             <a data-role="button" class="btn btn-danger" onclick="addChar(2)">2</a>

@@ -27,3 +27,7 @@ function hide(toHide1, toHide2) {
     document.getElementById(toHide1).style.display = "none";
     document.getElementById(toHide2).style.display = "none";
 }
+
+function showKeyboard(name) {
+    document.getElementById(name).style.display = "";
+}
