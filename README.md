@@ -21,8 +21,6 @@
 - Edited the README file with a description of the project and the changes made. [Ali] time spent 1hr
 - Researched possible solutions for toggle switches. [Riley]
 
-### Week of 28th:
----
 > Thu Mar 3 - **time spent: **
 - Created different branches for development and issues. [Riley] [Ali]
 - 
