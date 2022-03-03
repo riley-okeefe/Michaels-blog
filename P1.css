@@ -1,0 +1,22 @@
+#shift {
+    width: 70px;
+}
+#backspace {
+    width: 60px;
+}
+#quotationMarks {
+    width: 35px;
+}
+
+
+
+.header {
+  color: blue;
+  font-size: 25px;
+}
+
+.size {
+  display: block;
+  height: 30px;
+  min-width: 200px;
+}
