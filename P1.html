@@ -49,7 +49,8 @@
             <input placeholder="<type name>" type="text" class="">
         </div>
         <div class="col">
-            <div id="secondEditSwitch" class="form-check form-switch">
+            <div id="secondEditSwitch" onclick="display('secondEditSwitch','firstEditSwitch','ThirdEditSwitch');"
+                class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" role="switch">
             </div>
         </div>
@@ -65,7 +66,8 @@
             <input placeholder="<type name>" type="text" class="">
         </div>
         <div class="col">
-            <div id="thirdEditSwitch" class="form-check form-switch">
+            <div id="thirdEditSwitch" onclick="display('thirdEditSwitch','firstEditSwitch','secondEditSwitch');"
+                class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" role="switch">
             </div>
         </div>
@@ -132,13 +134,13 @@
             <a data-role="button" class="btn btn-danger" onclick="addChar('.')">.</a>
             <a data-role="button" class="btn btn-danger" onclick="addChar('?')">?</a>
             <a data-role="button" class="btn btn-danger" onclick="addChar(',')">,</a>
-          </div>
-          <div class="m-1">
+        </div>
+        <div class="m-1">
             <a data-role="button" class="btn btn-secondary" onclick="addChar('Word')">
                 Word
                 <i class="bi bi-piggy-bank"></i>
             </a>
-                <input class="keyboardInputSize" type="text">
+            <input class="keyboardInputSize" type="text">
             <a data-role="button" class="btn btn-secondary" onclick="addChar('star')">
                 <i class="bi bi-star"></i>
             </a>
@@ -146,11 +148,11 @@
                 Word
                 <i class="bi bi-piggy-bank"></i>
             </a>
-                <input class="keyboardInputSize" type="text">
+            <input class="keyboardInputSize" type="text">
             <a data-role="button" class="btn btn-secondary" onclick="addChar('star')">
                 <i class="bi bi-star"></i>
             </a>
-          </div>
+        </div>
     </div>
 
 </body>
