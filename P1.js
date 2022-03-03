@@ -13,7 +13,6 @@ function addChar(selection) {
     }
 }
 
-
 function toggleShift() {
     shift = true;
 }
@@ -23,3 +22,9 @@ function enter() {
     console.log(content);
     $("words").val("");
 }
+
+function display(toBeShown, toBeHid1, toBeHid2) {
+    document.getElementById(toBeShown).style.display = "";
+    document.getElementById(toBeHid1).style.display = "none";
+    document.getElementById(toBeHid2).style.display = "none";
+  }
