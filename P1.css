@@ -1,11 +1,18 @@
 #shift {
-  width: 70px;
+  width: 100px;
 }
 #backspace {
-  width: 60px;
+  width: 100px;
+}
+#enter {
+  width: 100px;
+}
+#space {
+  width: 100px;
 }
 #quotationMarks {
-  width: 35px;
+  height: 46px;
+  width: 46px;
 }
 
 .headerText {
@@ -32,4 +39,10 @@
 .keyBoardInputSize {
   min-width: 96px;
   width: 96px;
+}
+
+.key {
+  height: 46px;
+  width: 46px;
+  font-size: 23px;
 }
