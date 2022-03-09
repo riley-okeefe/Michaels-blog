@@ -36,13 +36,14 @@
   width: 500px;
 }
 
-.keyBoardInputSize {
+.inputButton {
   min-width: 96px;
   width: 96px;
+  min-height: 36px;
 }
 
 .key {
   height: 46px;
-  width: 46px;
+  width: 44px;
   font-size: 23px;
 }

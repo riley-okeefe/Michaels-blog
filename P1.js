@@ -49,7 +49,6 @@ function showKeyboard(kbd, input) {
       y.style.display = "block";
     } else {
       x.style.display = "none";
-
       y.style.display = "none";
     }
 }
