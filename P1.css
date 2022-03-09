@@ -24,3 +24,8 @@
 .paddingKey {
   padding-top: 10px;
 }
+
+.bigInputSize {
+  height: 200px;
+  width: 500px;
+}
