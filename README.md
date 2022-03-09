@@ -6,17 +6,28 @@
 ---
 > Wed Mar 2 - **time spent: 4pm - 10pm**
 - Created GitHub accounts and initiated the repository.
-[Ali](https://github.com/ali-alhusseini) -
-[Mike](https://github.com/miikewarren8) -
-[Riley](https://github.com/R0keefe)-
-[Alejandro](https://github.com/ale1907)
+[Ali] [Mike] [Riley] [Alejandro]
 - Created inital files `P1.html` `P1.js` `P1.css` and uploaded them to GitHub.
-[Ali](https://github.com/ali-alhusseini)
+[Ali]
 - Created headers, input boxes, and toggle switches for the three blogs.
-[Mike](https://github.com/miikewarren8)
+[Mike]
 - Created the on-screen keyboard and essential javascript functions.
-[Riley](https://github.com/R0keefe) - [Ali](https://github.com/ali-alhusseini)
+[Riley] [Ali]
 - Created custom CSS styling for the input boxes, toggle switches, and keyboard.
-[Mike](https://github.com/miikewarren8) - [Ali](https://github.com/ali-alhusseini) - [Riley](https://github.com/R0keefe)
+[Mike](https://github.com/miikewarren8) - [Ali] [Riley]
 - Created the `README.md` file.
-[Ali](https://github.com/ali-alhusseini)
+[Ali]
+- Changed the size of the input boxes and switches and spacing between elements. [Mike] time spent: 2hr
+- Edited the README file with a description of the project and the changes made. [Ali] time spent 1hr
+- Researched possible solutions for toggle switches. [Riley]
+
+> Thu Mar 3 - **time spent: **
+- Created different branches for development and issues. [Riley] [Ali]
+- Worked on creating javascript functions to show and hide the switches and keyboard. [Ali] 2 hours
+
+> Mon Mar 7 - **time spent: 1:15**
+- Monday lecture.[Mike] [Riley] [Alejandro] [Ali] 
+
+> Wed Mar 9 - **time spent: **
+- Riley Reviewd and merged pull request from Ali to master branch. 
+-

@@ -8,11 +8,10 @@
   width: 35px;
 }
 
-.header {
+.headerText {
   color: blue;
   font-size: 20px;
-  width: 175px;
-  text-align: center;
+  padding-left: 30px;
 }
 
 .inputSize {
@@ -25,7 +24,12 @@
   padding-top: 10px;
 }
 
+
 .bigInputSize {
   height: 200px;
   width: 500px;
+}
+
+.keyBoardInputSize {
+  width: 10px;
 }
