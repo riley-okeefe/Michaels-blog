@@ -23,4 +23,6 @@
 
 > Thu Mar 3 - **time spent: **
 - Created different branches for development and issues. [Riley] [Ali]
-- 
+
+> Mon Mar 7 - **time spent: 1:15**
+
