@@ -28,12 +28,14 @@ function hide(toHide1, toHide2) {
     document.getElementById(toHide2).style.display = "none";
 }
 
-function showKeyboard(name) {
-    var x = document.getElementById(name);
-    if (x.style.display === "none") {
+function showKeyboard(kbd, input) {
+    var x = document.getElementById(kbd);
+    var y = document.getElementById(input);
+    if (x.style.display === "none" && y.style.display === "none") {
       x.style.display = "block";
+      y.style.display = "block";
     } else {
       x.style.display = "none";
+      y.style.display = "none";
     }
-
 }

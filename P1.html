@@ -33,7 +33,7 @@
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="firstEditSwitch">
-                <input class="form-check-input inputSize" onclick="showKeyboard('keyboard'); hide('secondEditSwitch', 'thirdEditSwitch');"
+                <input class="form-check-input inputSize" onclick="showKeyboard('keyboard', 'inputArea'); hide('secondEditSwitch', 'thirdEditSwitch');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -154,17 +154,20 @@
             </a>
         </div>
     </div>
-    <div class=m-3>
-        <a data-role="button" class="btn btn-danger">Save</a>
-        <a data-role="button" class="btn btn-warning">Cancel</a>
+    <div id="inputArea" style="display: none;">
+        <div class=m-3>
+            <a data-role="button" class="btn btn-danger">Save</a>
+            <a data-role="button" class="btn btn-warning">Cancel</a>
+        </div>
+        <div class=m-3>
+            <textarea id="textEntry" placeholder="Insert Text" type="text" class="bigInputSize" name="text"></textarea>
+        </div>
+        <div class=m-3>
+            <a data-role="button" class="btn btn-danger">Save</a>
+            <a data-role="button" class="btn btn-warning">Cancel</a>
+        </div>
     </div>
-    <div class=m-3>
-        <textarea id="textEntry" placeholder="Insert Text" type="text" class="bigInputSize" name="text"></textarea>
-    </div>
-    <div class=m-3>
-        <a data-role="button" class="btn btn-danger">Save</a>
-        <a data-role="button" class="btn btn-warning">Cancel</a>
-    </div>
+
 
 </body>
 
