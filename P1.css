@@ -37,13 +37,18 @@
 }
 
 .inputButton {
-  min-width: 96px;
-  width: 96px;
-  min-height: 36px;
+  width: 126px;
+  min-height: 46px;
 }
 
 .key {
   height: 46px;
   width: 44px;
+  font-size: 23px;
+}
+
+.wordBtn {
+  height: 46px;
+  min-width: 96px;
   font-size: 23px;
 }
