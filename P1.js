@@ -29,5 +29,11 @@ function hide(toHide1, toHide2) {
 }
 
 function showKeyboard(name) {
-    document.getElementById(name).style.display = "";
+    var x = document.getElementById(name);
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+
 }
