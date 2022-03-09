@@ -50,7 +50,7 @@
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="secondEditSwitch">
-                <input class="form-check-input inputSize" onclick="showKeyboard('keyboard'); hide('firstEditSwitch', 'thirdEditSwitch');"
+                <input class="form-check-input inputSize" onclick="showKeyboard('keyboard', 'inputArea'); hide('firstEditSwitch', 'thirdEditSwitch');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -67,7 +67,7 @@
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="thirdEditSwitch">
-                <input class="form-check-input inputSize" onclick="showKeyboard('keyboard'); hide('firstEditSwitch', 'secondEditSwitch');"
+                <input class="form-check-input inputSize" onclick="showKeyboard('keyboard', 'inputArea'); hide('firstEditSwitch', 'secondEditSwitch');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -160,7 +160,7 @@
             <a data-role="button" class="btn btn-warning">Cancel</a>
         </div>
         <div class=m-3>
-            <textarea id="textEntry" placeholder="Insert Text" type="text" class="bigInputSize" name="text"></textarea>
+            <textarea id="words" placeholder="Insert Text" type="text" class="bigInputSize" name="text"></textarea>
         </div>
         <div class=m-3>
             <a data-role="button" class="btn btn-danger">Save</a>
