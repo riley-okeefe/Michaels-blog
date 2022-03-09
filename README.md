@@ -23,6 +23,11 @@
 
 > Thu Mar 3 - **time spent: **
 - Created different branches for development and issues. [Riley] [Ali]
+- Worked on creating javascript functions to show and hide the switches and keyboard. [Ali] 2 hours
 
 > Mon Mar 7 - **time spent: 1:15**
+- Monday lecture.[Mike] [Riley] [Alejandro] [Ali] 
 
+> Wed Mar 9 - **time spent: **
+- Riley Reviewd and merged pull request from Ali to master branch. 
+-
