@@ -1,20 +1,21 @@
-let shift = false;
+let caps = false;
 
 function addChar(selection) {
     var currChars = $("#words").val();
     if (selection === "bksp") {
         $("#words").val(currChars.substring(0, currChars.length - 1));
     } else {
-         if (shift === true) {
+         if (caps === true) {
                 $("#words").val(currChars.concat(selection.toUpperCase()));
+                caps = false;
         } else {
             $("#words").val(currChars.concat(selection));
         }
     }
-}
+} 
 
-function toggleShift() {
-    shift = true;
+function toggleCaps() {
+  caps = true;
 }
 
 function enter() {
@@ -24,7 +25,6 @@ function enter() {
 }
 
 function hide(toHide1, toHide2) {
-    
     var x = document.getElementById(toHide1);
     var v = document.getElementById(toHide2);
     if (x.style.display === "none") {
@@ -38,7 +38,6 @@ function hide(toHide1, toHide2) {
       } else {
         v.style.display = "none";     
       }
-    
 }
 
 function showKeyboard(kbd, input) {
