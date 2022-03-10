@@ -5,7 +5,7 @@
   width: 100px;
 }
 #enter {
-  width: 100px;
+  width: 98px;
 }
 #space {
   width: 100px;
@@ -33,11 +33,11 @@
 
 .bigInputSize {
   height: 200px;
-  width: 500px;
+  width: 583px;
 }
 
 .inputButton {
-  width: 126px;
+  width: 129px;
   min-height: 46px;
 }
 
