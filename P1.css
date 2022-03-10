@@ -1,4 +1,4 @@
-#shift {
+#caps {
   width: 100px;
 }
 #backspace {
@@ -25,6 +25,14 @@
   height: 35px;
   min-width: 150px;
   width: 150px;
+  cursor: text;
+}
+
+.switchSize {
+  height: 35px;
+  min-width: 150px;
+  width: 150px;
+  cursor: pointer;
 }
 
 .paddingKey {
