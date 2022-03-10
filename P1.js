@@ -5,7 +5,7 @@ function addChar(selection) {
     if (selection === "bksp") {
         $("#words").val(currChars.substring(0, currChars.length - 1));
     } else {
-         if (caps === true) {
+         if (caps === true && isNaN(selection)) {
                 $("#words").val(currChars.concat(selection.toUpperCase()));
                 caps = false;
         } else {
