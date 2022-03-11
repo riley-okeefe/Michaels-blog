@@ -51,3 +51,17 @@ function showKeyboard(kbd, input) {
     y.style.display = "none";
   }
 }
+
+function saveBlog(blog) {
+  if (typeof Storage !== "undefined") {
+    window.localStorage.setItem("blog", document.getElementById(blog));
+    console.log("saved to local storage");
+  } else {
+    console.log("Local storage is not available.");
+  }
+}
+
+function cancelBlog() {
+  window.localStorage.removeItem("blog");
+  console.log("removed blog");
+}
