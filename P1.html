@@ -159,16 +159,25 @@
         </div>
     </div>
     <div class="m-1" id="inputArea" style="display: none;">
-        <div class=m-3>
-            <a data-role="button" class="btn btn-danger" onclick="saveBlog('words');">Save</a>
-            <a data-role="button" class="btn btn-warning" onclick="cancelBlog();">Cancel</a>
+        <div class="btn-group m-3" role="group" aria-label="Basic radio toggle button group">
+            <label class="btn btn-danger" for="btnradio1" onclick="saveBlog('words');">
+                Save
+            </label>
+            <label class="btn btn-warning" for="btnradio2" onclick="cancelBlog();">
+                Cancel
+            </label>
         </div>
-        <div class=m-3>
-            <textarea id="words" placeholder="Insert Text" type="text" class="bigInputSize" name="text" onclick="getBlog('words');"></textarea>
+        <div class="m-3">
+            <textarea id="words" placeholder="Insert Text" type="text" class="bigInputSize" name="text"
+                onclick="getBlog('words');"></textarea>
         </div>
-        <div class=m-3>
-            <a data-role="button" class="btn btn-danger" onclick="saveBlog('words');">Save</a>
-            <a data-role="button" class="btn btn-warning" onclick="cancelBlog();">Cancel</a>
+        <div class="btn-group m-3" role="group" aria-label="Basic radio toggle button group">
+            <label class="btn btn-danger" for="btnradio1" onclick="saveBlog('words');">
+                Save
+            </label>
+            <label class="btn btn-warning" for="btnradio2" onclick="cancelBlog();">
+                Cancel
+            </label>
         </div>
     </div>
 </body>
