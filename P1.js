@@ -1,3 +1,10 @@
+/* 
+  Authors: Alejandro 
+           Ali Alhusseini
+           Mike Warren
+           Riley O'keefe 
+*/
+
 let caps = false;
 
 function addChar(selection) {
