@@ -3,6 +3,9 @@
              Ali Alhusseini
              Mike Warren
              Riley O'keefe 
+    This file includes a 3 blog title boxes with edit sitches and publish switches for each corresponding blog. 
+    When each switch is clicked a keyboard and text box show for the chosen blog. The text box includes a save 
+    button which saves the text to local storage, as well having a cancel button to discard the work done.
 
 -->
 <!DOCTYPE html>
@@ -23,6 +26,7 @@
 </head>
 
 <body>
+    <!-- Headers for blog names, edit switches, and publish switches -->
     <div class="row">
         <div class="col-sm-2 headerText">
             <span>Blog Name</span>
@@ -34,13 +38,13 @@
             <span>Publish</span>
         </div>
     </div>
-
+     <!-- creates first edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog-->
     <div class="row m-2">
         <div class="col-2" style="padding-top: 4px;">
             <input placeholder="<type name>" type="text" class="inputSize">
         </div>
         <div class="col-2">
-            <div class="form-check form-switch" id="firstEditSwitch">
+            <div class="form-check form-switch" id="firstEditSwitch"> 
                 <input class="form-check-input switchSize"
                     onclick="showKeyboard('keyboard', 'inputArea'); hide('secondEditSwitch', 'thirdEditSwitch');"
                     type="checkbox" role="switch">
@@ -52,7 +56,7 @@
             </div>
         </div>
     </div>
-
+    <!-- creates second edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog -->
     <div class="row m-2">
         <div class="col-2" style="padding-top: 4px;">
             <input placeholder="<type name>" type="text" class="inputSize">
@@ -70,7 +74,7 @@
             </div>
         </div>
     </div>
-
+    <!-- creates third edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog-->
     <div class="row m-2">
         <div class="col-2" style="padding-top: 4px;">
             <input placeholder="<type name>" type="text" class="inputSize">
@@ -88,8 +92,9 @@
             </div>
         </div>
     </div>
-
+    <!-- Creates the keyboard which is hidden on page laod-->
     <div class="m-3" id="keyboard" style="display: none;">
+        <!-- First row of keyboard -->
         <div class="m-1">
             <a data-role="button" class="btn btn-danger key" onclick="addChar(1)">1</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar(2)">2</a>
@@ -101,10 +106,11 @@
             <a data-role="button" class="btn btn-danger key" onclick="addChar(8)">8</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar(9)">9</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar(0)">0</a>
-            <a id="caps" data-role="button" class="btn btn-dark key" onclick="toggleCaps()">
+            <a id="caps" data-role="button" class="btn btn-dark key" onclick="toggleCaps()"> <!-- adds the shift key -->
                 <i class="bi-arrow-up"></i>
             </a>
         </div>
+        <!-- Second row of keyboard -->
         <div class="m-1">
             <a data-role="button" class="btn btn-danger key" onclick="addChar('q')">Q</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('w')">W</a>
@@ -116,10 +122,11 @@
             <a data-role="button" class="btn btn-danger key" onclick="addChar('i')">I</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('o')">O</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('p')">P</a>
-            <a id="backspace" data-role="button" class="btn btn-dark key" onclick="addChar('bksp')">
+            <a id="backspace" data-role="button" class="btn btn-dark key" onclick="addChar('bksp')"> <!-- adds the backspace key -->
                 <i class="bi-arrow-left"></i>
             </a>
         </div>
+        <!-- Third row of keyboard -->
         <div class="m-1">
             <a data-role="button" class="btn btn-danger key" onclick="addChar('a')">A</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('s')">S</a>
@@ -130,9 +137,10 @@
             <a data-role="button" class="btn btn-danger key" onclick="addChar('j')">J</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('k')">K</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('l')">L</a>
-            <a id="enter" data-role="button" class="btn btn-dark key" onclick="enter()">Enter</a>
+            <a id="enter" data-role="button" class="btn btn-dark key" onclick="enter()">Enter</a> <!-- adds the enter key -->
             <a id="quotationMarks" data-role="button" class="btn btn-danger key" onclick="addChar('&#34')">"</a>
         </div>
+        <!-- Fourth row of keyboard -->
         <div class="m-1">
             <a data-role="button" class="btn btn-danger key" onclick="addChar('z')">Z</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('x')">X</a>
@@ -141,11 +149,12 @@
             <a data-role="button" class="btn btn-danger key" onclick="addChar('b')">B</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('n')">N</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('m')">M</a>
-            <a id="space" data-role="button" class="btn btn-dark key" onclick="addChar('&#32')">Space</a>
+            <a id="space" data-role="button" class="btn btn-dark key" onclick="addChar('&#32')">Space</a> <!-- adds the space bar -->
             <a data-role="button" class="btn btn-danger key" onclick="addChar('.')">.</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('?')">?</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar(',')">,</a>
         </div>
+        <!-- Fifth row of keyboard -->
         <div class="m-1">
             <a data-role="button" class="btn btn-secondary wordBtn" onclick="addChar('Word')">
                 Word
@@ -165,23 +174,29 @@
             </a>
         </div>
     </div>
+    <!-- Creates the textbox which is hidden on page load -->
     <div class="m-1" id="inputArea" style="display: none;">
         <div class="btn-group m-3" role="group" aria-label="Basic radio toggle button group">
+            <!-- Creates the save button which saves text locally when clicked -->
             <label class="btn btn-danger" for="btnradio1" onclick="saveBlog('words');">
                 Save
             </label>
+            <!-- Creates the cancel button which discards text when clicked -->
             <label class="btn btn-warning" for="btnradio2" onclick="cancelBlog();">
                 Cancel
             </label>
         </div>
         <div class="m-3">
+            <!-- Gets the words in the text box -->
             <textarea id="words" placeholder="Insert Text" type="text" class="bigInputSize" name="text"
                 onclick="getBlog('words');"></textarea>
         </div>
+        <!-- Saves the content in text box -->
         <div class="btn-group m-3" role="group" aria-label="Basic radio toggle button group">
             <label class="btn btn-danger" for="btnradio1" onclick="saveBlog('words');">
                 Save
             </label>
+            <!-- Discards content in text box -->
             <label class="btn btn-warning" for="btnradio2" onclick="cancelBlog();">
                 Cancel
             </label>
