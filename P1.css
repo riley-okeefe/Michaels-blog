@@ -1,11 +1,20 @@
-#shift {
+/* 
+  Authors: Alejandro 
+           Ali Alhusseini
+           Mike Warren
+           Riley O'keefe 
+*/
+
+
+
+ #caps {
   width: 100px;
 }
 #backspace {
   width: 100px;
 }
 #enter {
-  width: 100px;
+  width: 98px;
 }
 #space {
   width: 100px;
@@ -25,6 +34,14 @@
   height: 35px;
   min-width: 142px;
   width: 142px;
+  cursor: text;
+}
+
+.switchSize {
+  height: 35px;
+  min-width: 150px;
+  width: 150px;
+  cursor: pointer;
 }
 
 .paddingKey {
@@ -33,16 +50,22 @@
 
 .bigInputSize {
   height: 200px;
-  width: 500px;
+  width: 583px;
 }
 
-.keyBoardInputSize {
-  min-width: 96px;
-  width: 96px;
+.inputButton {
+  width: 129px;
+  min-height: 46px;
 }
 
 .key {
   height: 46px;
-  width: 46px;
+  width: 44px;
+  font-size: 23px;
+}
+
+.wordBtn {
+  height: 46px;
+  min-width: 96px;
   font-size: 23px;
 }

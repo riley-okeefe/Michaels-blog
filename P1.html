@@ -1,3 +1,10 @@
+<!--
+    Authors: Alejandro 
+             Ali Alhusseini
+             Mike Warren
+             Riley O'keefe 
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +17,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="P1.css">
+    <script src="./jquery-3.6.0.js"></script>
     <script src="./P1.js"></script>
     <title>P1</title>
 </head>
@@ -33,13 +41,14 @@
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="firstEditSwitch">
-                <input class="form-check-input inputSize" onclick="showKeyboard('keyboard'); hide('secondEditSwitch', 'thirdEditSwitch');"
+                <input class="form-check-input switchSize"
+                    onclick="showKeyboard('keyboard', 'inputArea'); hide('secondEditSwitch', 'thirdEditSwitch');"
                     type="checkbox" role="switch">
             </div>
         </div>
         <div class="col-2">
             <div class="form-check form-switch">
-                <input class="form-check-input inputSize" type="checkbox" role="switch">
+                <input class="form-check-input switchSize" type="checkbox" role="switch">
             </div>
         </div>
     </div>
@@ -50,13 +59,14 @@
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="secondEditSwitch">
-                <input class="form-check-input inputSize" onclick="showKeyboard('keyboard'); hide('firstEditSwitch', 'thirdEditSwitch');"
+                <input class="form-check-input switchSize"
+                    onclick="showKeyboard('keyboard', 'inputArea'); hide('firstEditSwitch', 'thirdEditSwitch');"
                     type="checkbox" role="switch">
             </div>
         </div>
         <div class="col-2">
             <div class="form-check form-switch">
-                <input class="form-check-input inputSize" type="checkbox" role="switch">
+                <input class="form-check-input switchSize" type="checkbox" role="switch">
             </div>
         </div>
     </div>
@@ -67,18 +77,19 @@
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="thirdEditSwitch">
-                <input class="form-check-input inputSize" onclick="showKeyboard('keyboard'); hide('firstEditSwitch', 'secondEditSwitch');"
+                <input class="form-check-input switchSize"
+                    onclick="showKeyboard('keyboard', 'inputArea'); hide('firstEditSwitch', 'secondEditSwitch');"
                     type="checkbox" role="switch">
             </div>
         </div>
         <div class="col-2">
             <div class="form-check form-switch">
-                <input class="form-check-input inputSize" type="checkbox" role="switch">
+                <input class="form-check-input switchSize" type="checkbox" role="switch">
             </div>
         </div>
     </div>
 
-    <div class="m-4" id="keyboard" style="display: none;">
+    <div class="m-3" id="keyboard" style="display: none;">
         <div class="m-1">
             <a data-role="button" class="btn btn-danger key" onclick="addChar(1)">1</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar(2)">2</a>
@@ -90,7 +101,7 @@
             <a data-role="button" class="btn btn-danger key" onclick="addChar(8)">8</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar(9)">9</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar(0)">0</a>
-            <a id="shift" data-role="button" class="btn btn-dark key" onclick="toggleShift()">
+            <a id="caps" data-role="button" class="btn btn-dark key" onclick="toggleCaps()">
                 <i class="bi-arrow-up"></i>
             </a>
         </div>
@@ -120,7 +131,7 @@
             <a data-role="button" class="btn btn-danger key" onclick="addChar('k')">K</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('l')">L</a>
             <a id="enter" data-role="button" class="btn btn-dark key" onclick="enter()">Enter</a>
-            <a id="quotationMarks" data-role="button" class="btn btn-danger key" onclick="addChar('#&34')">"</a>
+            <a id="quotationMarks" data-role="button" class="btn btn-danger key" onclick="addChar('&#34')">"</a>
         </div>
         <div class="m-1">
             <a data-role="button" class="btn btn-danger key" onclick="addChar('z')">Z</a>
@@ -136,36 +147,46 @@
             <a data-role="button" class="btn btn-danger key" onclick="addChar(',')">,</a>
         </div>
         <div class="m-1">
-            <a data-role="button" class="btn btn-secondary" onclick="addChar('Word')">
+            <a data-role="button" class="btn btn-secondary wordBtn" onclick="addChar('Word')">
                 Word
                 <i class="bi bi-piggy-bank"></i>
             </a>
-            <input class="keyBoardInputSize" type="text">
-            <a data-role="button" class="btn btn-secondary keyboardInputSize" onclick="addChar('star')">
+            <input class="inputButton" type="text">
+            <a data-role="button" class="btn btn-secondary key" onclick="addChar('star')">
                 <i class="bi bi-star"></i>
             </a>
-            <a data-role="button" class="btn btn-secondary" onclick="addChar('Word')">
+            <a data-role="button" class="btn btn-secondary wordBtn" onclick="addChar('Word')">
                 Word
                 <i class="bi bi-piggy-bank"></i>
             </a>
-            <input class="keyBoardInputSize" type="text">
-            <a data-role="button" class="btn btn-secondary" onclick="addChar('star')">
+            <input class="inputButton" type="text">
+            <a data-role="button" class="btn btn-secondary key" onclick="addChar('star')">
                 <i class="bi bi-star"></i>
             </a>
         </div>
     </div>
-    <div class=m-3>
-        <a data-role="button" class="btn btn-danger">Save</a>
-        <a data-role="button" class="btn btn-warning">Cancel</a>
+    <div class="m-1" id="inputArea" style="display: none;">
+        <div class="btn-group m-3" role="group" aria-label="Basic radio toggle button group">
+            <label class="btn btn-danger" for="btnradio1" onclick="saveBlog('words');">
+                Save
+            </label>
+            <label class="btn btn-warning" for="btnradio2" onclick="cancelBlog();">
+                Cancel
+            </label>
+        </div>
+        <div class="m-3">
+            <textarea id="words" placeholder="Insert Text" type="text" class="bigInputSize" name="text"
+                onclick="getBlog('words');"></textarea>
+        </div>
+        <div class="btn-group m-3" role="group" aria-label="Basic radio toggle button group">
+            <label class="btn btn-danger" for="btnradio1" onclick="saveBlog('words');">
+                Save
+            </label>
+            <label class="btn btn-warning" for="btnradio2" onclick="cancelBlog();">
+                Cancel
+            </label>
+        </div>
     </div>
-    <div class=m-3>
-        <textarea id="textEntry" placeholder="Insert Text" type="text" class="bigInputSize" name="text"></textarea>
-    </div>
-    <div class=m-3>
-        <a data-role="button" class="btn btn-danger">Save</a>
-        <a data-role="button" class="btn btn-warning">Cancel</a>
-    </div>
-
 </body>
 
 </html>
