@@ -100,8 +100,9 @@ function showKeyboard(kbd, input) {
 */
 function saveBlog(blog) {
   if (typeof Storage !== "undefined") {
-    window.localStorage.setItem("blog", document.getElementById(blog));
+    window.localStorage.setItem("blog", document.getElementById(blog).value);
     console.log("saved to local storage");
+    console.log(document.getElementById(blog).value);
   } else {
     console.log("Local storage is not available.");
   }
@@ -113,4 +114,13 @@ function saveBlog(blog) {
 function cancelBlog() {
   window.localStorage.removeItem("blog");
   console.log("removed blog");
+}
+
+/*
+  This function gets the value of the input box from local storage and puts back in the input area
+  after the browser refreshes.
+  The value gets deleted only if the browser cache is deleted.
+*/
+function getBlog() {
+  document.getElementById("words").value = window.localStorage.getItem("blog");
 }
