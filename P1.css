@@ -5,23 +5,21 @@
            Riley O'keefe 
 */
 
-
-
- #caps {
+#caps {
   width: 100px;
 }
 #backspace {
   width: 100px;
 }
 #enter {
-  width: 98px;
+  width: 100px;
 }
 #space {
   width: 100px;
 }
 #quotationMarks {
-  height: 46px;
-  width: 46px;
+  height: 48px;
+  width: 48px;
 }
 
 .headerText {
@@ -32,8 +30,8 @@
 
 .inputSize {
   height: 35px;
-  min-width: 142px;
-  width: 142px;
+  min-width: 150px;
+  width: 150px;
   cursor: text;
 }
 
@@ -50,7 +48,7 @@
 
 .bigInputSize {
   height: 200px;
-  width: 583px;
+  width: 622px;
 }
 
 .inputButton {
@@ -59,13 +57,13 @@
 }
 
 .key {
-  height: 46px;
-  width: 44px;
+  height: 48px;
+  width: 48px;
   font-size: 23px;
 }
 
 .wordBtn {
   height: 46px;
-  min-width: 96px;
+  min-width: 124px;
   font-size: 23px;
 }
