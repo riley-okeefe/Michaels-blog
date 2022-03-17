@@ -33,5 +33,7 @@
 -
 > Mon Mar 14 - **time spent:**
 -
-> Wed Mar 17 - **time spent:**
--
+> Wed Mar 16 - **time spent: 1:30**
+- Everyone worked on finishing the project by adding comments, getting the local storage function to work, and resizing the keyboard.
+
+
