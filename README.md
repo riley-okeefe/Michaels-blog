@@ -31,3 +31,5 @@
 > Wed Mar 9 - **time spent: **
 - Riley Reviewd and merged pull request from Ali to master branch. 
 -
+> Mon Mar 14 - **time spent:**
+> Wed Mar 17 - **time spent:**
