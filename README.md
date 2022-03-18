@@ -29,7 +29,7 @@
 - Monday lecture.[Mike] [Riley] [Alejandro] [Ali] 
 
 > Wed Mar 9 - **time spent: **
-- Riley Reviewd and merged pull request from Ali to master branch. 
+- Riley Reviewed and merged pull request from Ali to master branch. 
 -
 > Mon Mar 14 - **time spent:**
 -
