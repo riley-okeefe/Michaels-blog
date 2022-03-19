@@ -21,19 +21,19 @@
 - Edited the README file with a description of the project and the changes made. [Ali] time spent 1hr
 - Researched possible solutions for toggle switches. [Riley]
 
-> Thu Mar 3 - **time spent: **
+> Thu Mar 3 - **time spent: 2:00**
 - Created different branches for development and issues. [Riley] [Ali]
 - Worked on creating javascript functions to show and hide the switches and keyboard. [Ali] 2 hours
 
 > Mon Mar 7 - **time spent: 1:15**
 - Monday lecture.[Mike] [Riley] [Alejandro] [Ali] 
 
-> Wed Mar 9 - **time spent: **
+> Wed Mar 9 - **time spent: 3:00**
 - Riley Reviewed and merged pull request from Ali to master branch. 
 -
-> Mon Mar 14 - **time spent:**
+> Mon Mar 14 - **time spent: 1:15**
 -
-> Wed Mar 16 - **time spent: 1:30**
+> Wed Mar 16 - **time spent: 3:30**
 - Everyone worked on finishing the project by adding comments, getting the local storage function to work, and resizing the keyboard.
 
 
