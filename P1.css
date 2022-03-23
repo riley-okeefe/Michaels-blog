@@ -16,15 +16,15 @@
 /* input size on keyboard. */
 .inputSize {
   height: 35px;
-  min-width: 150px;
-  width: 150px;
+  min-width: 180px;
+  width: 180px;
   cursor: text;
 }
 /* toggle switches size in the header. */
 .switchSize {
   height: 35px;
-  min-width: 150px;
-  width: 150px;
+  min-width: 180px;
+  width: 180px;
   cursor: pointer;
 }
 
@@ -35,7 +35,7 @@
 /* size of text box below the keyboard. */
 .bigInputSize {
   height: 200px;
-  width: 658px;
+  width: 725px;
 }
 /* input button size on the keyboard. */
 .inputButton {
@@ -47,14 +47,15 @@
   height: 50px;
   width: 50px;
   font-size: 23px;
+  margin: 5px;
 }
 
 /* Size of wide keys on keyboard. */
 .wideKey {
   height: 50px;
-  width: 117px;
+  width: 100px;
   font-size: 23px;
-  padding-left: 25px;
+  margin: 5px;
 }
 
 /* word button size on the keyboard. */
