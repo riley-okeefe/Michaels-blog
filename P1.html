@@ -92,6 +92,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Creates the textbox which is hidden on page load -->
+    <div class="m-1" id="inputArea" style="display: none;">
+        <div class="btn-group m-3" role="group" aria-label="Basic radio toggle button group">
+            <!-- Creates the save button which saves text locally when clicked -->
+            <label class="btn btn-danger" for="btnradio1" onclick="saveBlog('words');">
+                Save
+            </label>
+            <label class="btn btn-primary" for="btnradio2" onclick="undo();">
+                Undo
+            </label>
+            <!-- Creates the cancel button which discards text when clicked -->
+            <label class="btn btn-danger" for="btnradio3" onclick="cancelBlog();">
+                Cancel
+            </label>
+        </div>
+        <div class="m-3">
+            <!-- Gets the words in the text box -->
+            <textarea id="words" placeholder="Insert Text" type="text" class="bigInputSize" name="text"></textarea>
+        </div>
+    </div>
     <!-- Creates the keyboard which is hidden on page laod-->
     <div class="m-3" id="keyboard" style="display: none;">
         <!-- First row of keyboard -->
@@ -106,7 +127,7 @@
             <a data-role="button" class="btn btn-danger key" onclick="addChar(8)">8</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar(9)">9</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar(0)">0</a>
-            <a id="caps" data-role="button" class="btn btn-dark key" onclick="toggleCaps()"> <!-- adds the shift key -->
+            <a data-role="button" class="btn btn-primary wideKey" onclick="toggleCaps()"> <!-- adds the shift key -->
                 <i class="bi-arrow-up"></i>
             </a>
         </div>
@@ -122,7 +143,7 @@
             <a data-role="button" class="btn btn-danger key" onclick="addChar('i')">I</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('o')">O</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('p')">P</a>
-            <a id="backspace" data-role="button" class="btn btn-dark key" onclick="addChar('bksp')"> <!-- adds the backspace key -->
+            <a data-role="button" class="btn btn-primary wideKey" onclick="addChar('bksp')"> <!-- adds the backspace key -->
                 <i class="bi-arrow-left"></i>
             </a>
         </div>
@@ -137,8 +158,8 @@
             <a data-role="button" class="btn btn-danger key" onclick="addChar('j')">J</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('k')">K</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('l')">L</a>
-            <a id="enter" data-role="button" class="btn btn-dark key" onclick="enter()">Enter</a> <!-- adds the enter key -->
-            <a id="quotationMarks" data-role="button" class="btn btn-danger key" onclick="addChar('&#34')">"</a>
+            <a data-role="button" class="btn btn-primary wideKey" onclick="enter()">Enter</a> <!-- adds the enter key -->
+            <a data-role="button" class="btn btn-danger key" onclick="addChar('&#34')">"</a>
         </div>
         <!-- Fourth row of keyboard -->
         <div class="m-1">
@@ -149,7 +170,7 @@
             <a data-role="button" class="btn btn-danger key" onclick="addChar('b')">B</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('n')">N</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('m')">M</a>
-            <a id="space" data-role="button" class="btn btn-dark key" onclick="addChar('&#32')">Space</a> <!-- adds the space bar -->
+            <a data-role="button" class="btn btn-primary wideKey" onclick="addChar('&#32')">Space</a> <!-- adds the space bar -->
             <a data-role="button" class="btn btn-danger key" onclick="addChar('.')">.</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar('?')">?</a>
             <a data-role="button" class="btn btn-danger key" onclick="addChar(',')">,</a>
@@ -172,33 +193,6 @@
             <a data-role="button" class="btn btn-secondary key" onclick="addChar('star')">
                 <i class="bi bi-star"></i>
             </a>
-        </div>
-    </div>
-    <!-- Creates the textbox which is hidden on page load -->
-    <div class="m-1" id="inputArea" style="display: none;">
-        <div class="btn-group m-3" role="group" aria-label="Basic radio toggle button group">
-            <!-- Creates the save button which saves text locally when clicked -->
-            <label class="btn btn-danger" for="btnradio1" onclick="saveBlog('words');">
-                Save
-            </label>
-            <!-- Creates the cancel button which discards text when clicked -->
-            <label class="btn btn-warning" for="btnradio2" onclick="cancelBlog();">
-                Cancel
-            </label>
-        </div>
-        <div class="m-3">
-            <!-- Gets the words in the text box -->
-            <textarea id="words" placeholder="Insert Text" type="text" class="bigInputSize" name="text"></textarea>
-        </div>
-        <!-- Saves the content in text box -->
-        <div class="btn-group m-3" role="group" aria-label="Basic radio toggle button group">
-            <label class="btn btn-danger" for="btnradio1" onclick="saveBlog('words');">
-                Save
-            </label>
-            <!-- Discards content in text box -->
-            <label class="btn btn-warning" for="btnradio2" onclick="cancelBlog();">
-                Cancel
-            </label>
         </div>
     </div>
 </body>
