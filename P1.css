@@ -1,10 +1,13 @@
 /* 
-  Authors: Alejandro 
-           Ali Alhusseini
-           Mike Warren
-           Riley O'keefe 
+  Authors: Alejandro Bensusan (A00440174)
+           Ali Alhusseini (A00431699)
+           Mike Warren (A00447652)
+           Riley O'keefe (A00460983)
+
+  This file defines the styling of the P1.html file. 
 */
 
+<<<<<<< HEAD
 #caps {
   width: 100px;
 }
@@ -16,21 +19,28 @@
 }
 #space {
   width: 100px;
+=======
+/* quotation marks button size on the keyboard. */
+#quotationMarks {
+  height: 48px;
+  width: 48px;
+>>>>>>> 777c5e8a76ab8e0debf2293fc7ea1efc4958349d
 }
 
+/* header font size, padding, and color. */
 .headerText {
   color: blue;
   font-size: 20px;
   padding-left: 30px;
 }
-
+/* input size on keyboard. */
 .inputSize {
   height: 35px;
   min-width: 150px;
   width: 150px;
   cursor: text;
 }
-
+/* toggle switches size in the header. */
 .switchSize {
   height: 35px;
   min-width: 150px;
@@ -38,27 +48,36 @@
   cursor: pointer;
 }
 
+/* spacing between keyboard and input area. */
 .paddingKey {
   padding-top: 10px;
 }
-
+/* size of text box below the keyboard. */
 .bigInputSize {
   height: 200px;
-  width: 622px;
+  width: 658px;
 }
-
+/* input button size on the keyboard. */
 .inputButton {
   width: 129px;
   min-height: 46px;
 }
-
+/* keyboard keys sizing. */
 .key {
   height: 50px;
   width: 50px;
   font-size: 23px;
+}
+
+/* Size of wide keys on keyboard. */
+.wideKey {
+  height: 50px;
+  width: 117px;
+  font-size: 23px;
   padding-left: 25px;
 }
 
+/* word button size on the keyboard. */
 .wordBtn {
   height: 46px;
   min-width: 124px;
