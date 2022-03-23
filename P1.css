@@ -17,10 +17,6 @@
 #space {
   width: 100px;
 }
-#quotationMarks {
-  height: 48px;
-  width: 48px;
-}
 
 .headerText {
   color: blue;
@@ -57,9 +53,10 @@
 }
 
 .key {
-  height: 48px;
-  width: 48px;
+  height: 50px;
+  width: 50px;
   font-size: 23px;
+  padding-left: 25px;
 }
 
 .wordBtn {
