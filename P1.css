@@ -7,7 +7,6 @@
   This file defines the styling of the P1.html file. 
 */
 
-<<<<<<< HEAD
 #caps {
   width: 100px;
 }
@@ -19,12 +18,10 @@
 }
 #space {
   width: 100px;
-=======
 /* quotation marks button size on the keyboard. */
 #quotationMarks {
   height: 48px;
   width: 48px;
->>>>>>> 777c5e8a76ab8e0debf2293fc7ea1efc4958349d
 }
 
 /* header font size, padding, and color. */
