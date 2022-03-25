@@ -15,6 +15,8 @@ let capsLock = false;
 function toggleShift() {
   shift = true;
 }
+
+// toggle caps lock
 function toggleCapsLock() {
   if (capsLock === false) {
     capsLock = true;
@@ -31,7 +33,7 @@ function addChar(selection) {
   if (selection === "delete") {
       $("#inputBox").val(currChars.substring(0, currChars.length - 1));
   } else {
-      if (capsLock === true) {
+      if (capsLock === true && isNaN(selection)) {
           $("#inputBox").val(currChars.concat(selection.toUpperCase()));
       } else if (shift === true && isNaN(selection)) {
           $("#inputBox").val(currChars.concat(selection.toUpperCase()));
