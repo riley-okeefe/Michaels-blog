@@ -8,48 +8,56 @@
   on the screen and by saving the blogs to storage and/or the server.
 */
 
-/*
-  This variable defines the state of the caps button. 
-  Set to false by default, meaning the shift key is not pressed.
-*/
-let caps = false;
+let shift = false;
+let capsLock = false;
+let deleteKey = false;
 
-/*
-  This function adds characters to the "words" input area.
-  The funcion checks if the backspace key is pressed, then it deletes a letter. 
-  The function also checks if caps is on, then it adds uppercase letters instead
-  of lowercase. 
+// toggle keys
+function toggleShift() {
+  shift = true;
+}
+function toggleCapsLock() {
+  capsLock = capsLock !== true;
+}
 
-  selectoin: word or letter to be added.
-*/
+// add or delete characters to/from input area
 function addChar(selection) {
-  var currChars = $("#words").val();
-  if (selection === "bksp") {
-    $("#words").val(currChars.substring(0, currChars.length - 1));
+  var currChars = $("#inputBox").val();
+  if (selection === "delete") {
+      $("#inputBox").val(currChars.substring(0, currChars.length - 1));
   } else {
-    if (caps === true && isNaN(selection)) {
-      $("#words").val(currChars.concat(selection.toUpperCase()));
-      caps = false;
-    } else {
-      $("#words").val(currChars.concat(selection));
-    }
+      if (capsLock === true) {
+          $("#inputBox").val(currChars.concat(selection.toUpperCase()));
+      } else if (shift === true && isNaN(selection)) {
+          $("#inputBox").val(currChars.concat(selection.toUpperCase()));
+          shift = false;
+      } else {
+          $("#inputBox").val(currChars.concat(selection));
+      }
   }
 }
 
-/*
-  This function toggles caps (shift).
-*/
-function toggleCaps() {
-  caps = true;
+// save blog to local storage
+function saveBlog(blog) {
+  if (typeof Storage !== "undefined") {
+      window.localStorage.setItem("blog", document.getElementById(blog).value);
+      alert("The blog has been saved succesfully!");
+  }
 }
 
-/*
-  This function console logs the value of the input area.
-*/
-function enter() {
-  var content = $("#words").val();
-  console.log(content);
-  $("words").val("");
+// delete blog from local storage
+function cancelBlog() {
+  if (confirm("Are you sure you want to delete the blog entirely?") == true) {
+      if (confirm("This action cannot be undone!") == true) {
+          window.localStorage.removeItem("blog");
+          document.location.reload();
+      }
+  }
+}
+
+// get the blog from local storage to the input box
+function getBlog() {
+  document.getElementById("inputBox").value = window.localStorage.getItem("blog");
 }
 
 /*
@@ -91,36 +99,4 @@ function showKeyboard(kbd, input) {
     x.style.display = "none";
     y.style.display = "none";
   }
-}
-
-/*
-  This function saves the blog that is inputted in the input area box to local storage.
-
-  blog: id of the text inputted in the input area.
-*/
-function saveBlog(blog) {
-  if (typeof Storage !== "undefined") {
-    window.localStorage.setItem("blog", document.getElementById(blog).value);
-    console.log("saved to local storage");
-    console.log(document.getElementById(blog).value);
-  } else {
-    console.log("Local storage is not available.");
-  }
-}
-
-/*
-  This funciton removes the blog from local storage. 
-*/
-function cancelBlog() {
-  window.localStorage.removeItem("blog");
-  console.log("removed blog");
-}
-
-/*
-  This function gets the value of the input box from local storage and puts back in the input area
-  after the browser refreshes.
-  The value gets deleted only if the browser cache is deleted.
-*/
-function getBlog() {
-  document.getElementById("words").value = window.localStorage.getItem("blog");
 }
