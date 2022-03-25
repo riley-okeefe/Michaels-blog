@@ -9,7 +9,7 @@
 
 /* header font size, padding, and color. */
 .headerText {
-  color: blue;
+  color: #1b2164;
   font-size: 20px;
   padding-left: 30px;
 }
@@ -22,9 +22,9 @@
 }
 
 .button {
-  background-color: rgb(27, 33, 100);
-  border-color: rgb(27, 33, 100);
-  color: white;
+  background-color: #1b2164;
+  border-color: #1b2164;
+  color: #ffffff;
   border-radius: 5px;
   font-size: 25px;
   font-weight:400;
@@ -33,13 +33,16 @@
   margin: 3px;
   cursor: pointer;
 }
+button:hover {
+  background-color: #a02e32;
+}
 #save {
   height: 50px;
   width: 120px;
 }
 #cancel {
-  background-color:rgb(235, 0, 8);
-  border-color: rgb(160, 46, 50);
+  background-color:#eb0008;
+  border-color: #a02e32;
   height: 50px;
   width: 150px;
 }
@@ -49,41 +52,37 @@
 #inputBox {
   border-radius: 5px;
   font-size: 20px;
-  border: 1px solid rgb(27, 33, 100);
-  box-shadow: 0 0 10px rgb(27, 33, 100);
+  border: 1px solid #1b2164;
+  box-shadow: 0 0 10px #1b2164;
   resize: none;
 }
 #delete {
-  background-color: rgb(160, 46, 50);
-  border-color: rgb(160, 46, 50);
+  background-color: #a02e32;
+  border-color: #a02e32;
   width: 117px;
 }
 #tab {
-  background-color: rgb(160, 46, 50);
-  border-color: rgb(160, 46, 50);
+  background-color: #a02e32;
+  border-color: #a02e32;
   width: 118px;
 }
 #capsLock {
-  background-color: rgb(160, 46, 50);
-  border-color: rgb(160, 46, 50);
+  background-color: #a02e32;
+  border-color: #a02e32;
   width: 150px;
 }
 #return {
-  background-color: rgb(160, 46, 50);
-  border-color: rgb(160, 46, 50);  
+  background-color: #a02e32;
+  border-color: #a02e32;  
   width: 108px;
 }
 #shift {
-  background-color: rgb(160, 46, 50);
-  border-color: rgb(160, 46, 50);
+  background-color: #a02e32;
+  border-color: #a02e32;
   width: 166px;
 }
 #space {
-  background-color: rgb(160, 46, 50);
-  border-color: rgb(160, 46, 50);
+  background-color: #a02e32;
+  border-color: #a02e32;
   width: 418px;
-}
-
-button:hover {
-  background-color: rgb(160, 46, 50);
 }
