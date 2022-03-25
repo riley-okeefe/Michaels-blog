@@ -13,13 +13,6 @@
   font-size: 20px;
   padding-left: 30px;
 }
-/* input size on keyboard. */
-.inputSize {
-  height: 35px;
-  min-width: 180px;
-  width: 180px;
-  cursor: text;
-}
 /* toggle switches size in the header. */
 .switchSize {
   height: 35px;
@@ -28,39 +21,69 @@
   cursor: pointer;
 }
 
-/* spacing between keyboard and input area. */
-.paddingKey {
-  padding-top: 10px;
+.button {
+  background-color: rgb(27, 33, 100);
+  border-color: rgb(27, 33, 100);
+  color: white;
+  border-radius: 5px;
+  font-size: 25px;
+  font-weight:400;
+  width: 65px;
+  height: 65px;
+  margin: 3px;
+  cursor: pointer;
 }
-/* size of text box below the keyboard. */
-.bigInputSize {
-  height: 200px;
-  width: 725px;
-}
-/* input button size on the keyboard. */
-.inputButton {
-  width: 129px;
-  min-height: 46px;
-}
-/* keyboard keys sizing. */
-.key {
+#save {
   height: 50px;
-  width: 50px;
-  font-size: 23px;
-  margin: 5px;
+  width: 120px;
+}
+#cancel {
+  background-color:rgb(235, 0, 8);
+  border-color: rgb(160, 46, 50);
+  height: 50px;
+  width: 150px;
+}
+#cancel:hover {
+  background-color: red;
+}
+#inputBox {
+  border-radius: 5px;
+  font-size: 20px;
+  border: 1px solid rgb(27, 33, 100);
+  box-shadow: 0 0 10px rgb(27, 33, 100);
+  resize: none;
+}
+#delete {
+  background-color: rgb(160, 46, 50);
+  border-color: rgb(160, 46, 50);
+  width: 117px;
+}
+#tab {
+  background-color: rgb(160, 46, 50);
+  border-color: rgb(160, 46, 50);
+  width: 118px;
+}
+#capsLock {
+  background-color: rgb(160, 46, 50);
+  border-color: rgb(160, 46, 50);
+  width: 150px;
+}
+#return {
+  background-color: rgb(160, 46, 50);
+  border-color: rgb(160, 46, 50);  
+  width: 108px;
+}
+#shift {
+  background-color: rgb(160, 46, 50);
+  border-color: rgb(160, 46, 50);
+  width: 166px;
+}
+#space {
+  background-color: rgb(160, 46, 50);
+  border-color: rgb(160, 46, 50);
+  width: 418px;
 }
 
-/* Size of wide keys on keyboard. */
-.wideKey {
-  height: 50px;
-  width: 100px;
-  font-size: 23px;
-  margin: 5px;
-}
-
-/* word button size on the keyboard. */
-.wordBtn {
-  height: 46px;
-  min-width: 124px;
-  font-size: 23px;
+button:hover {
+  background-color: rgb(160, 46, 50);
 }
