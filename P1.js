@@ -10,19 +10,23 @@
 
 let shift = false;
 let capsLock = false;
-let deleteKey = false;
 
 // toggle keys
 function toggleShift() {
   shift = true;
 }
 function toggleCapsLock() {
-  capsLock = capsLock !== true;
+  if (capsLock === false) {
+    capsLock = true;
+    document.getElementById("capsLock").style.backgroundColor = "red";
+  } else {
+    capsLock = false;
+  }
 }
 
 // add or delete characters to/from input area
 function addChar(selection) {
-  var currChars = $("#inputBox").val();
+  let currChars = $("#inputBox").val();
   if (selection === "delete") {
       $("#inputBox").val(currChars.substring(0, currChars.length - 1));
   } else {
@@ -47,8 +51,8 @@ function saveBlog(blog) {
 
 // delete blog from local storage
 function cancelBlog() {
-  if (confirm("Are you sure you want to delete the blog entirely?") == true) {
-      if (confirm("This action cannot be undone!") == true) {
+  if (confirm("Are you sure you want to delete the blog entirely?") === true) {
+      if (confirm("This action cannot be undone!") === true) {
           window.localStorage.removeItem("blog");
           document.location.reload();
       }
@@ -67,8 +71,8 @@ function getBlog() {
   toHide2: second edit switch to be hidden. 
 */
 function hide(toHide1, toHide2) {
-  var x = document.getElementById(toHide1);
-  var v = document.getElementById(toHide2);
+  let x = document.getElementById(toHide1);
+  let v = document.getElementById(toHide2);
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
@@ -90,8 +94,8 @@ function hide(toHide1, toHide2) {
   y: the content of the input area.
 */
 function showKeyboard(kbd, input) {
-  var x = document.getElementById(kbd);
-  var y = document.getElementById(input);
+  let x = document.getElementById(kbd);
+  let y = document.getElementById(input);
   if (x.style.display === "none" && y.style.display === "none") {
     x.style.display = "block";
     y.style.display = "block";
