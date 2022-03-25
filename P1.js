@@ -20,10 +20,12 @@ function toggleShift() {
 function toggleCapsLock() {
   if (capsLock === false) {
     capsLock = true;
-    document.getElementById("capsLock").style.backgroundColor = "red";
+    document.getElementById("capsLock").style.backgroundColor = "#09ff70";
+    document.getElementById("capsLock").style.color = "#111111";
   } else {
     capsLock = false;
-    document.getElementById("capsLock").style.backgroundColor = "rgb(160, 46, 50)";
+    document.getElementById("capsLock").style.backgroundColor = "#a02e32";
+    document.getElementById("capsLock").style.color = "#ffffff";
   }
 }
 
