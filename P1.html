@@ -92,88 +92,89 @@
             </div>
         </div>
     </div>
-
-    <!-- Creates the textbox which is hidden on page load -->
-    <div class="m-1" id="inputArea" style="display: none;">
-        <div class="btn-group m-3" role="group" aria-label="Basic radio toggle button group">
-            <!-- Creates the save button which saves text locally when clicked -->
-            <label class="btn btn-danger wideKey" for="btnradio1" onclick="saveBlog('words');">
-                Save
-            </label>
-            <label class="btn btn-primary wideKey" for="btnradio2" onclick="undo();">
-                Undo
-            </label>
-            <!-- Creates the cancel button which discards text when clicked -->
-            <label class="btn btn-danger wideKey" for="btnradio3" onclick="cancelBlog();">
-                Cancel
-            </label>
+    <div id="inputArea">
+        <div>
+            <button type="button" class="button" title="save" id="save" onclick="saveBlog('inputBox');">save</button>
+            <button type="button" class="button" title="cancel" id="cancel" onclick="cancelBlog();">cancel</button>
         </div>
-        <div class="m-3">
-            <!-- Gets the words in the text box -->
-            <textarea id="words" type="text" class="bigInputSize" name="text"></textarea>
+        <div>
+            <textarea name="inputBox" id="inputBox" cols="89" rows="10" autocapitalize="on" autofocus></textarea>
         </div>
     </div>
-    <!-- Creates the keyboard which is hidden on page laod-->
-    <div class="m-3" id="keyboard" style="display: none;">
-        <!-- First row of keyboard -->
-        <div class="m-1">
-            <a data-role="button" class="btn btn-danger key" onclick="addChar(1)">1</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar(2)">2</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar(3)">3</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar(4)">4</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar(5)">5</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar(6)">6</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar(7)">7</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar(8)">8</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar(9)">9</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar(0)">0</a>
-            <a data-role="button" class="btn btn-primary wideKey" onclick="toggleCaps()"> <!-- adds the shift key -->
-                <i class="bi-arrow-up"></i>
-            </a>
+    <div id="keyboard">
+        <div>
+            <button title="number 1" type="button" class="button" onclick="addChar(1);">1</button>
+            <button title="number 2" type="button" class="button" onclick="addChar(2);">2</button>
+            <button title="number 3" type="button" class="button" onclick="addChar(3);">3</button>
+            <button title="number 4" type="button" class="button" onclick="addChar(4);">4</button>
+            <button title="number 5" type="button" class="button" onclick="addChar(5);">5</button>
+            <button title="number 6" type="button" class="button" onclick="addChar(6);">6</button>
+            <button title="number 7" type="button" class="button" onclick="addChar(7);">7</button>
+            <button title="number 8" type="button" class="button" onclick="addChar(8);">8</button>
+            <button title="number 9" type="button" class="button" onclick="addChar(9);">9</button>
+            <button title="number 0" type="button" class="button" onclick="addChar(0);">0</button>
+            <button title="exclamation mark" type="button" class="button" onclick="addChar('!');">!</button>
+            <button title="question mark" type="button" class="button" onclick="addChar('?');">?</button>
+            <button title="underscore" type="button" class="button" onclick="addChar('_');">_</button>
+            <button title="delete" type="button" class="button" id="delete" onclick="addChar('delete');">delete</button>
         </div>
-        <!-- Second row of keyboard -->
-        <div class="m-1">
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('q')">q</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('w')">w</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('e')">e</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('r')">r</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('t')">t</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('y')">y</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('u')">u</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('i')">i</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('o')">o</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('p')">p</a>
-            <a data-role="button" class="btn btn-primary wideKey" onclick="addChar('bksp')"> <!-- adds the backspace key -->
-                <i class="bi-arrow-left"></i>
-            </a>
+        <div>
+            <button title="tab" type="button" class="button" id="tab" onclick="addChar('&#009');">tab</button>
+            <button title="q" type="button" class="button" onclick="addChar('q');">q</button>
+            <button title="w" type="button" class="button" onclick="addChar('w');">w</button>
+            <button title="e" type="button" class="button" onclick="addChar('e');">e</button>
+            <button title="r" type="button" class="button" onclick="addChar('r');">r</button>
+            <button title="t" type="button" class="button" onclick="addChar('t');">t</button>
+            <button title="y" type="button" class="button" onclick="addChar('y');">y</button>
+            <button title="u" type="button" class="button" onclick="addChar('u');">u</button> 
+            <button title="i" type="button" class="button" onclick="addChar('i');">i</button>
+            <button title="o" type="button" class="button" onclick="addChar('o');">o</button>
+            <button title="p" type="button" class="button" onclick="addChar('p');">p</button>
+            <button title=":" type="button" class="button" onclick="addChar(':');">:</button>
+            <button title="double quotation mark" type="button" class="button" onclick="addChar('&#34');">"</button>
+            <button title="caret - circumflex" type="button" class="button" onclick="addChar('^');">^</button>
         </div>
-        <!-- Third row of keyboard -->
-        <div class="m-1">
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('a')">a</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('s')">s</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('d')">d</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('f')">f</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('g')">g</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('h')">h</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('j')">j</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('k')">k</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('l')">l</a>
-            <a data-role="button" class="btn btn-primary wideKey" onclick="enter()">Enter</a> <!-- adds the enter key -->
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('&#34')">"</a>
+        <div>
+            <button title="caps lock" type="button" class="button" id="capsLock" onclick="toggleCapsLock();">caps lock</button>
+            <button title="a" type="button" class="button" onclick="addChar('a');">a</button>
+            <button title="s" type="button" class="button" onclick="addChar('s');">s</button>
+            <button title="d" type="button" class="button" onclick="addChar('d');">d</button>
+            <button title="f" type="button" class="button" onclick="addChar('f');">f</button>
+            <button title="g" type="button" class="button" onclick="addChar('g');">g</button>
+            <button title="h" type="button" class="button" onclick="addChar('h');">h</button>
+            <button title="j" type="button" class="button" onclick="addChar('j');">j</button>
+            <button title="k" type="button" class="button" onclick="addChar('k');">k</button>
+            <button title="l" type="button" class="button" onclick="addChar('l');">l</button>
+            <button title=";" type="button" class="button" onclick="addChar(';');">;</button>
+            <button title="single quotation mark" type="button" class="button" onclick="addChar('\'');">'</button>
+            <button title="return" type="button" class="button" id="return">return</button>
         </div>
-        <!-- Fourth row of keyboard -->
-        <div class="m-1">
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('z')">z</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('x')">x</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('c')">c</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('v')">v</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('b')">b</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('n')">n</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('m')">m</a>
-            <a data-role="button" class="btn btn-primary wideKey" onclick="addChar('&#32')">Space</a> <!-- adds the space bar -->
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('.')">.</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar('?')">?</a>
-            <a data-role="button" class="btn btn-danger key" onclick="addChar(',')">,</a>
+        <div>
+            <button title="shift" type="button" class="button" id="shift" onclick="toggleShift();">shift</button>
+            <button title="z" type="button" class="button" onclick="addChar('z');">z</button>
+            <button title="x" type="button" class="button" onclick="addChar('x');">x</button>
+            <button title="c" type="button" class="button" onclick="addChar('c');">c</button>
+            <button title="v" type="button" class="button" onclick="addChar('v');">v</button>
+            <button title="b" type="button" class="button" onclick="addChar('b');">b</button>
+            <button title="n" type="button" class="button" onclick="addChar('n');">n</button>
+            <button title="m" type="button" class="button" onclick="addChar('m');">m</button>
+            <button title="comma" type="button" class="button" onclick="addChar(',');">,</button>
+            <button title="period" type="button" class="button" onclick="addChar('.');">.</button>
+            <button title="forward slash" type="button" class="button" onclick="addChar('/');">/</button>
+            <button title="shift" type="button" class="button" id="shift" onclick="toggleShift();">shift</button>
+        </div>
+        <div>
+
+            <button title="number sign" type="button" class="button" onclick="addChar('#');">#</button>
+            <button title="dollar sign" type="button" class="button" onclick="addChar('$');">$</button>
+            <button title="percent sign" type="button" class="button" onclick="addChar('%');">%</button>
+            <button title="open paranthesis" type="button" class="button" onclick="addChar('&#40');">(</button>
+            <button title="close paranthesis" type="button" class="button" onclick="addChar('&#41');">)</button>
+            <button title="space" type="button" class="button" id="space" onclick="addChar('&#32');">space</button>
+            <button title="asterik" type="button" class="button" onclick="addChar('*');">*</button>
+            <button title="hyphen" type="button" class="button" onclick="addChar('-');">-</button>
+            <button title="plus sign" type="button" class="button" onclick="addChar('+');">+</button>
+            <button title="equals sign" type="button" class="button" onclick="addChar('=');">=</button>
         </div>
     </div>
 </body>
