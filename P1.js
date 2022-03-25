@@ -21,6 +21,7 @@ function toggleCapsLock() {
     document.getElementById("capsLock").style.backgroundColor = "red";
   } else {
     capsLock = false;
+    document.getElementById("capsLock").style.backgroundColor = "rgb(160, 46, 50)";
   }
 }
 
