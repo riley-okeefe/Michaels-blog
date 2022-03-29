@@ -7,6 +7,7 @@
   This file defines the functionality of the P1.html file by hiding and showing elements
   on the screen and by saving the blogs to storage and/or the server.
 */
+const SERVER_URL = "http://140.184.230.209:3039";
 
 let shift = false;
 let capsLock = false;
@@ -50,8 +51,13 @@ function addChar(selection) {
 function saveBlog(blog) {
   if (typeof Storage !== "undefined") {
       window.localStorage.setItem("blog", document.getElementById(blog).value);
-      alert("The blog has been saved succesfully!");
   }
+  $.get(SERVER_URL + "/inputBox", callback1).fail(errorCallback1);
+  // save to the server
+  $("#save").on("click", function () {
+    let x = {input: document.getElementById("inputBox").value};
+    $.post(SERVER_URL + "/inputBox", x).fail(errorCallback1);
+  });
 }
 
 // delete blog from local storage
@@ -108,4 +114,20 @@ function showKeyboard(kbd, input) {
     x.style.display = "none";
     y.style.display = "none";
   }
+}
+
+// function setup(){
+//   $("#save").on("click", function (){
+//     let x = {input: document.getElementById("inputBox").value};
+//      $.post(SERVER_UR + "/inputBox", x).fail(errorCallback1);
+//  });
+// }
+
+function callback1(returnedData) {
+  console.log(returnedData);
+  document.getElementById("inputBox").value = returnedData[0];
+}
+
+function errorCallback1(err) {
+  console.log(err.responseText);
 }
