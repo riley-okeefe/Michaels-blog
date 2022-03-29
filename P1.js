@@ -85,12 +85,12 @@ function hide(toHide1, toHide2) {
   let x = document.getElementById(toHide1);
   let v = document.getElementById(toHide2);
   if (x.style.display === "none") {
-    x.style.display = "block";
+    x.style.display = "flex";
   } else {
     x.style.display = "none";
   }
   if (v.style.display === "none") {
-    v.style.display = "block";
+    v.style.display = "flex";
   } else {
     v.style.display = "none";
   }

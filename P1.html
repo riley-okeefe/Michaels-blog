@@ -39,14 +39,14 @@
         </div>
     </div>
      <!-- creates first edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog-->
-    <div class="row m-2">
+    <div class="row m-2" id="firstRow">
         <div class="col-2" style="padding-top: 4px;">
             <span>1</span>
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="firstEditSwitch"> 
                 <input class="form-check-input switchSize"
-                    onclick="showKeyboard('keyboard', 'inputArea'); hide('secondEditSwitch', 'thirdEditSwitch');"
+                    onclick="showKeyboard('keyboard', 'inputArea'); hide('secondEditSwitch', 'thirdEditSwitch'); hide('secondRow', 'thirdRow')"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -57,14 +57,14 @@
         </div>
     </div>
     <!-- creates second edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog -->
-    <div class="row m-2">
+    <div class="row m-2" id="secondRow">
         <div class="col-2" style="padding-top: 4px;">
             <span>2</span>
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="secondEditSwitch">
                 <input class="form-check-input switchSize"
-                    onclick="showKeyboard('keyboard', 'inputArea'); hide('firstEditSwitch', 'thirdEditSwitch');"
+                    onclick="showKeyboard('keyboard', 'inputArea'); hide('firstEditSwitch', 'thirdEditSwitch'); hide('firstRow', 'thirdRow');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -75,14 +75,14 @@
         </div>
     </div>
     <!-- creates third edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog-->
-    <div class="row m-2">
+    <div class="row m-2" id="thirdRow">
         <div class="col-2" style="padding-top: 4px;">
             <span>3</span>
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="thirdEditSwitch">
                 <input class="form-check-input switchSize"
-                    onclick="showKeyboard('keyboard', 'inputArea'); hide('firstEditSwitch', 'secondEditSwitch');"
+                    onclick="showKeyboard('keyboard', 'inputArea'); hide('firstEditSwitch', 'secondEditSwitch'); hide('firstRow', 'secondRow');"
                     type="checkbox" role="switch">
             </div>
         </div>
