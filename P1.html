@@ -25,7 +25,7 @@
     <title>P1</title>
 </head>
 
-<body onload="getBlog();">
+<body onload="getBlog()">
     <!-- Headers for blog names, edit switches, and publish switches -->
     <div class="row">
         <div class="col-sm-2 headerText">
@@ -39,14 +39,14 @@
         </div>
     </div>
      <!-- creates first edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog-->
-    <div class="row m-2" id="firstRow">
+    <div  class="row m-2" id="firstRow">
         <div class="col-2" style="padding-top: 4px;">
             <span>1</span>
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="firstEditSwitch"> 
                 <input class="form-check-input switchSize"
-                    onclick="showKeyboard('keyboard', 'inputArea'); hide('secondEditSwitch', 'thirdEditSwitch'); hide('secondRow', 'thirdRow')"
+                    onclick="showKeyboard('keyboard', 'inputArea1'); hide('secondEditSwitch', 'thirdEditSwitch'); hide('secondRow', 'thirdRow')"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -57,14 +57,14 @@
         </div>
     </div>
     <!-- creates second edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog -->
-    <div class="row m-2" id="secondRow">
+    <div  class="row m-2" id="secondRow">
         <div class="col-2" style="padding-top: 4px;">
             <span>2</span>
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="secondEditSwitch">
                 <input class="form-check-input switchSize"
-                    onclick="showKeyboard('keyboard', 'inputArea'); hide('firstEditSwitch', 'thirdEditSwitch'); hide('firstRow', 'thirdRow');"
+                    onclick="showKeyboard('keyboard', 'inputArea2'); hide('firstEditSwitch', 'thirdEditSwitch'); hide('firstRow', 'thirdRow');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -75,14 +75,14 @@
         </div>
     </div>
     <!-- creates third edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog-->
-    <div class="row m-2" id="thirdRow">
+    <div  class="row m-2" id="thirdRow">
         <div class="col-2" style="padding-top: 4px;">
             <span>3</span>
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="thirdEditSwitch">
                 <input class="form-check-input switchSize"
-                    onclick="showKeyboard('keyboard', 'inputArea'); hide('firstEditSwitch', 'secondEditSwitch'); hide('firstRow', 'secondRow');"
+                    onclick="showKeyboard('keyboard', 'inputArea3'); hide('firstEditSwitch', 'secondEditSwitch'); hide('firstRow', 'secondRow');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -94,13 +94,31 @@
     </div>
 
 
-    <div id="inputArea" style="display: none;">
+    <div id="inputArea1" style="display: none;">
         <div>
-            <button type="button" class="button" title="save" id="save" onclick="saveBlog('inputBox');">save</button>
+            <button type="button" class="button" title="save" id="save" onclick="saveBlog1('inputBox1');">save</button>
             <button type="button" class="button" title="cancel" id="cancel" onclick="cancelBlog();">cancel</button>
         </div>
         <div>
-            <textarea name="inputBox" id="inputBox" cols="89" rows="10" autocapitalize="on" autofocus></textarea>
+            <textarea name="inputBox1" id="inputBox1" cols="89" rows="10" autocapitalize="on"></textarea>
+        </div>
+    </div>
+    <div id="inputArea2" style="display: none;">
+        <div>
+            <button type="button" class="button" title="save" id="save" onclick="saveBlog2('inputBox2');">save</button>
+            <button type="button" class="button" title="cancel" id="cancel" onclick="cancelBlog();">cancel</button>
+        </div>
+        <div>
+            <textarea name="inputBox2" id="inputBox2" cols="89" rows="10" autocapitalize="on"></textarea>
+        </div>
+    </div>
+    <div id="inputArea3" style="display: none;">
+        <div>
+            <button type="button" class="button" title="save" id="save" onclick="saveBlog3('inputBox3');">save</button>
+            <button type="button" class="button" title="cancel" id="cancel" onclick="cancelBlog();">cancel</button>
+        </div>
+        <div>
+            <textarea name="inputBox3" id="inputBox3" cols="89" rows="10" autocapitalize="on" ></textarea>
         </div>
     </div>
     <div id="keyboard" style="display: none;">
