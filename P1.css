@@ -45,14 +45,16 @@ button:hover {
   background-color: #a02e32;
 }
 #save {
-  height: 50px;
+  height: 55px;
   width: 120px;
+  margin: 10px;
 }
 #cancel {
   background-color:#eb0008;
   border-color: #a02e32;
-  height: 50px;
+  height: 55px;
   width: 150px;
+  margin: 10px;
 }
 #cancel:hover {
   background-color: red;
@@ -63,6 +65,7 @@ button:hover {
   border: 1px solid #1b2164;
   box-shadow: 0 0 10px #1b2164;
   resize: none;
+  margin: 2px;
 }
 #delete {
   background-color: #a02e32;
