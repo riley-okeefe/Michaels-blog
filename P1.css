@@ -14,9 +14,12 @@
   padding-left: 30px;
 }
 .headerText1 {
-  color: #a02e32;
+  color: #ffffff;
   font-size: 20px;
   padding-left: 30px;
+}
+.headerText1:hover {
+  color: #a02e32;
 }
 /* toggle switches size in the header. */
 .switchSize {
