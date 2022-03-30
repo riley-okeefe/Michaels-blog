@@ -35,7 +35,7 @@
   color: #ffffff;
   border-radius: 5px;
   font-size: 25px;
-  font-weight:400;
+  font-weight: 400;
   width: 65px;
   height: 65px;
   margin: 3px;
@@ -50,7 +50,7 @@ button:hover {
   margin: 10px;
 }
 #cancel {
-  background-color:#eb0008;
+  background-color: #eb0008;
   border-color: #a02e32;
   height: 55px;
   width: 150px;
@@ -84,7 +84,7 @@ button:hover {
 }
 #return {
   background-color: #a02e32;
-  border-color: #a02e32;  
+  border-color: #a02e32;
   width: 108px;
 }
 #shift {
@@ -96,4 +96,9 @@ button:hover {
   background-color: #a02e32;
   border-color: #a02e32;
   width: 419px;
+}
+#wordbankbutton {
+  height: 35px;
+  min-width: 200px;
+  font-size: large;
 }

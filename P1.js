@@ -13,6 +13,8 @@ let shift = false;
 let capsLock = false;
 let keyboardButtons = document.getElementsByClassName("keyboardButton");
 
+var arrayOfWord = [];
+
 // toggle keys
 function toggleShift() {
   if (shift === false) {
@@ -164,4 +166,21 @@ function callback1(returnedData) {
 
 function errorCallback1(err) {
   console.log(err.responseText);
+}
+
+function saveWords() { 
+  var input = document.getElementById("wordbankinput").value;
+  if (input.length != 0) {
+  arrayOfWord.push(input);
+  }
+  document.getElementById("wordbankinput").value = "";
+}
+
+function displayWords() {
+  for (var i = 0; i < arrayOfWord.length; i++) {
+    var btn = document.createElement("button");
+    var t = document.createTextNode(arrayOfWord[i]);
+    btn.appendChild(t);
+    document.body.appendChild(btn);
+  }
 }

@@ -43,6 +43,7 @@
             <p style="text-align: right; padding-right: 1px;">Inspired by the Montreal Canadiens</p>
         </div>
     </div>
+
      <!-- creates first edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog-->
     <div  class="row m-2" id="firstRow">
         <div class="col-2 headerText" style="padding-top: 10px;">
@@ -116,6 +117,14 @@
         </div>
     </div>
 
+    <div>
+        <div class="row m-3">
+            <input class="col-2" name="wordbankinput" id="wordbankinput" type="text"></textarea>
+            <button class="col-2 button" type="button" title="wordbankbutton" id="wordbankbutton"  onclick="saveWords();">Save to WordBank</button>
+            <button class="col-2 button" type="button" title="displaywordbankbutton" id="wordbankbutton" onclick="displayWords();">Display WordBank</button>
+        </div>
+    </div>
+    <div>
     <div id="keyboard" style="display: none;">
         <div>
             <button title="number 1" type="button" class="button" onclick="addChar(1);">1</button>
@@ -192,5 +201,8 @@
             <button title="equals sign" type="button" class="button" onclick="addChar('=');">=</button>
         </div>
     </div>
+    <div id="words"></div>
+    </div>
+    
 </body>
 </html>
