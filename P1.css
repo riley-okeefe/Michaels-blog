@@ -65,7 +65,7 @@ button:hover {
   border: 1px solid #1b2164;
   box-shadow: 0 0 10px #1b2164;
   resize: none;
-  margin: 2px;
+  margin-left: 2px;
 }
 #delete {
   background-color: #a02e32;
