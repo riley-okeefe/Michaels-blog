@@ -32,33 +32,64 @@ function toggleCapsLock() {
 
 // add or delete characters to/from input area
 function addChar(selection) {
-  let currChars = $("#inputBox").val();
+  let currChars1 = $("#inputBox1").val();
   if (selection === "delete") {
-      $("#inputBox").val(currChars.substring(0, currChars.length - 1));
+      $("#inputBox1").val(currChars1.substring(0, currChars1.length - 1));
   } else {
       if (capsLock === true && isNaN(selection)) {
-          $("#inputBox").val(currChars.concat(selection.toUpperCase()));
+          $("#inputBox1").val(currChars1.concat(selection.toUpperCase()));
       } else if (shift === true && isNaN(selection)) {
-          $("#inputBox").val(currChars.concat(selection.toUpperCase()));
+          $("#inputBox1").val(currChars1.concat(selection.toUpperCase()));
           shift = false;
       } else {
-          $("#inputBox").val(currChars.concat(selection));
+          $("#inputBox1").val(currChars1.concat(selection));
+      }
+  }
+  let currChars2 = $("#inputBox2").val();
+  if (selection === "delete") {
+      $("#inputBox2").val(currChars2.substring(0, currChars2.length - 1));
+  } else {
+      if (capsLock === true && isNaN(selection)) {
+          $("#inputBox2").val(currChars2.concat(selection.toUpperCase()));
+      } else if (shift === true && isNaN(selection)) {
+          $("#inputBox2").val(currChars2.concat(selection.toUpperCase()));
+          shift = false;
+      } else {
+          $("#inputBox2").val(currChars2.concat(selection));
+      }
+  }
+  let currChars3 = $("#inputBox3").val();
+  if (selection === "delete") {
+      $("#inputBox3").val(currChars3.substring(0, currChars3.length - 1));
+  } else {
+      if (capsLock === true && isNaN(selection)) {
+          $("#inputBox3").val(currChars3.concat(selection.toUpperCase()));
+      } else if (shift === true && isNaN(selection)) {
+          $("#inputBox3").val(currChars3.concat(selection.toUpperCase()));
+          shift = false;
+      } else {
+          $("#inputBox3").val(currChars3.concat(selection));
       }
   }
 }
 
 // save blog to local storage
-function saveBlog(blog) {
-  if (typeof Storage !== "undefined") {
-      window.localStorage.setItem("blog", document.getElementById(blog).value);
+function saveBlog1() {
+  window.localStorage.setItem('text1', "inputBox1")
   }
-  $.get(SERVER_URL + "/inputBox", callback1).fail(errorCallback1);
-  // save to the server
-  $("#save").on("click", function () {
-    let x = {input: document.getElementById("inputBox").value};
-    $.post(SERVER_URL + "/inputBox", x).fail(errorCallback1);
-  });
-}
+  function saveBlog2(){
+    window.localStorage.setItem('text2', "inputBox2")
+  }
+  function saveBlog3(){
+    window.localStorage.setItem('text', "inputBox")
+  }
+  // $.get(SERVER_URL + "/inputBox", callback1).fail(errorCallback1);
+  // // save to the server
+  // $("#save").on("click", function () {
+  //   let x = {input: document.getElementById("inputBox").value};
+  //   $.post(SERVER_URL + "/inputBox", x).fail(errorCallback1);
+  // });
+
 
 // delete blog from local storage
 function cancelBlog() {
@@ -71,8 +102,14 @@ function cancelBlog() {
 }
 
 // get the blog from local storage to the input box
-function getBlog() {
-  document.getElementById("inputBox").value = window.localStorage.getItem("blog");
+function getBlog1() {
+ window.localStorage.getItem("text1");
+}
+function getBlog2(){
+  window.localStorage.getItem("text2");
+}
+function getBlog3() {
+  window.localStorage.getItem("text");
 }
 
 /*
