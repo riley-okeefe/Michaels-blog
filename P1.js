@@ -11,31 +11,40 @@ const SERVER_URL = "http://140.184.230.209:3039";
 
 let shift = false;
 let capsLock = false;
+let keyboardButtons = document.getElementsByClassName("keyboardButton");
 
 // toggle keys
 function toggleShift() {
-	shift = true;
-	let keyboardButtons = document.getElementsByClassName("keyboardButton");
-
-	if (shift === true) {
-	  for (x = 0; x < keyboardButtons.length; x++) {
-	    keyboardButtons[x].style.textTransform = "uppercase";
-	  }
+	if (shift === false) {
+		shift = true;
+		shiftKeys('true');
 	} else {
-		for (y = 0; y < keyboardButtons.length; y++) {
-			keyboardButtons[y].style.textTransform = "lowercase";
-		  }
+		shift = false;
+		shiftKeys('false');
 	}
 }
 
+function shiftKeys(state) {
+	if (state == "true") {
+		for (let x = 0; x < keyboardButtons.length; x++) {
+			keyboardButtons[x].style.textTransform = "uppercase";
+		  }
+	} else {
+		for (let x = 0; x < keyboardButtons.length; x++) {
+			keyboardButtons[x].style.textTransform = "lowercase";
+		  }
+	}
+}
 // toggle caps lock
 function toggleCapsLock() {
 	if (capsLock === false) {
 		capsLock = true;
+		shiftKeys('true');
 		document.getElementById("capsLock").style.backgroundColor = "#09ff70";
 		document.getElementById("capsLock").style.color = "#111111";
 	} else {
 		capsLock = false;
+		shiftKeys('false');
 		document.getElementById("capsLock").style.backgroundColor = "#a02e32";
 		document.getElementById("capsLock").style.color = "#ffffff";
 	}
@@ -52,6 +61,7 @@ function addChar(selection) {
 		} else if (shift === true && isNaN(selection)) {
 			$("#inputBox").val(currChars.concat(selection.toUpperCase()));
 			shift = false;
+			shiftKeys('false');
 		} else {
 			$("#inputBox").val(currChars.concat(selection));
 		}
