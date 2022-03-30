@@ -44,7 +44,7 @@
 button:hover {
   background-color: #a02e32;
 }
-#save {
+.saveButtons {
   height: 55px;
   width: 120px;
   margin: 10px;
