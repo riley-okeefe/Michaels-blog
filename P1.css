@@ -13,6 +13,16 @@
   font-size: 20px;
   padding-left: 30px;
 }
+.headerText1 {
+  color: #a02e32;
+  font-size: 20px;
+  padding-left: 30px;
+}
+#flagImage {
+  height: 25px;
+  width: 29px;
+
+}
 /* toggle switches size in the header. */
 .switchSize {
   height: 35px;

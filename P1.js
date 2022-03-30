@@ -54,12 +54,12 @@ function saveBlog(blog, blogID) {
       window.localStorage.setItem(blogID, document.getElementById(blog).value);
   }
   
-  // $.get(SERVER_URL + "/inputBox", callback1).fail(errorCallback1);
-  // // save to the server
-  // $("#save").on("click", function () {
-  //   let x = {input: document.getElementById("inputBox").value};
-  //   $.post(SERVER_URL + "/inputBox", x).fail(errorCallback1);
-  // });
+  $.get(SERVER_URL + "/inputBox", callback1).fail(errorCallback1);
+  // save to the server
+  $("#save").on("click", function () {
+    let x = {input: document.getElementById("inputBox").value};
+    $.post(SERVER_URL + "/blog" + blogID, x).fail(errorCallback1);
+  });
   }
 }
 
@@ -78,6 +78,7 @@ function cancelBlog(blogID) {
 function getBlog(blogID) {
   document.getElementById("inputBox").value = window.localStorage.getItem(blogID);
 }
+
 /*
   This function hides the other edit switches when one of them is switched on. 
 
@@ -122,12 +123,12 @@ function showKeyboard(kbd, input, buttons) {
   }
 }
 
-// function setup(){
-//   $("#save").on("click", function (){
-//     let x = {input: document.getElementById("inputBox").value};
-//      $.post(SERVER_UR + "/inputBox", x).fail(errorCallback1);
-//  });
-// }
+function setup(){
+  $("#save").on("click", function (){
+    let x = {input: document.getElementById("inputBox").value};
+     $.post(SERVER_UR + "/inputBox", x).fail(errorCallback1);
+ });
+}
 
 function callback1(returnedData) {
   console.log(returnedData);
