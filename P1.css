@@ -102,3 +102,26 @@ button:hover {
   min-width: 200px;
   font-size: large;
 }
+
+#displaywordbankbutton {
+  height: 35px;
+  min-width: 200px;
+  font-size: large;
+}
+
+#keyboardbutton {
+  height: 35px;
+  min-width: 200px;
+  font-size: large;
+}
+
+.wordbutton {
+  height: auto;
+  min-width: auto;
+  font-size: auto;
+  background-color: #1b2164;
+  border-color: #1b2164;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 10px;
+}
