@@ -37,20 +37,20 @@
         <div class="col-2 headerText">
             <span>Publish</span>
         </div>
-        <div class="col-1 ">            
+        <div class="col-1 ">
         </div>
         <div class="col headerText1">
             <p style="text-align: right; padding-right: 1px;">Inspired by the Montreal Canadiens</p>
         </div>
     </div>
 
-     <!-- creates first edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog-->
-    <div  class="row m-2" id="firstRow">
+    <!-- creates first edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog-->
+    <div class="row m-2" id="firstRow">
         <div class="col-2 headerText" style="padding-top: 10px;">
             <p>1</p>
         </div>
         <div class="col-2">
-            <div class="form-check form-switch" id="firstEditSwitch"> 
+            <div class="form-check form-switch" id="firstEditSwitch">
                 <input class="form-check-input switchSize" id="first"
                     onclick="getBlog('1'); showKeyboard('keyboard', 'inputArea', 'buttons1'); hide('secondEditSwitch', 'thirdEditSwitch'); hide('secondRow', 'thirdRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
                     type="checkbox" role="switch">
@@ -63,7 +63,7 @@
         </div>
     </div>
     <!-- creates second edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog -->
-    <div  class="row m-2" id="secondRow">
+    <div class="row m-2" id="secondRow">
         <div class="col-2 headerText" style="padding-top: 10px;">
             <p>2</p>
         </div>
@@ -81,7 +81,7 @@
         </div>
     </div>
     <!-- creates third edit switch. When clicked hides other edit switches and displays keyboard and textbox for the corresponding blog-->
-    <div  class="row m-2" id="thirdRow">
+    <div class="row m-2" id="thirdRow">
         <div class="col-2 headerText" style="padding-top: 10px;">
             <p>3</p>
         </div>
@@ -101,110 +101,124 @@
 
     <div>
         <div id="buttons1" style="display: none;">
-            <button type="button" class="saveButtons button" title="save" id="save" onclick="saveBlog('inputBox', '1');">save</button>
+            <button type="button" class="button" title="save" id="save"
+                onclick="saveBlog('inputBox', '1');">save</button>
             <button type="button" class="button" title="cancel" id="cancel" onclick="cancelBlog('1');">cancel</button>
         </div>
         <div id="buttons2" style="display: none;">
-            <button type=" button" class="saveButtons button" title="save" id="save" onclick="saveBlog('inputBox', '2');">save</button>
+            <button type=" button" class="button" title="save" id="save"
+                onclick="saveBlog('inputBox', '2');">save</button>
             <button type=" button" class="button" title="cancel" id="cancel" onclick="cancelBlog('2');">cancel</button>
-        </div> 
+        </div>
         <div id="buttons3" style="display: none;">
-            <button type="button" class="saveButtons button" title="save" id="save" onclick="saveBlog('inputBox', '3');">save</button>
+            <button type="button" class="button" title="save" id="save"
+                onclick="saveBlog('inputBox', '3');">save</button>
             <button type="button" class="button" title="cancel" id="cancel" onclick="cancelBlog('3');">cancel</button>
         </div>
         <div id="inputArea" style="display: none;">
-            <textarea name="inputBox" id="inputBox" cols="105" rows="8" autocapitalize="on"></textarea>
+            <textarea name="inputBox" id="inputBox" cols="104" rows="8" autocapitalize="on"></textarea>
         </div>
     </div>
 
     <div>
         <div class="row m-3">
             <input class="col-2" name="wordbankinput" id="wordbankinput" type="text" style="display: none;"></textarea>
-            <button class="col-2 button" type="button" title="wordbankbutton" id="wordbankbutton" style="display: none;" onclick="saveWords();">Save to WordBank</button>
-            <button class="col-2 button" type="button" title="displaywordbankbutton" id="displaywordbankbutton" style="display: none;" onclick="displayWords();showButtons();hide('keyboard', 'displaywordbankbutton');show('keyboardbutton');">Display WordBank</button>
-            <button class="col-2 button" type="button" title="displaykeyboardbutton" id="keyboardbutton" style="display: none;" onclick="hideButtons();hideSingle('keyboardbutton');show('displaywordbankbutton');show('keyboard');">Display Keyboard</button>
+            <button class="col-2 button" type="button" title="wordbankbutton" id="wordbankbutton" style="display: none;"
+                onclick="saveWords();">Save to WordBank</button>
+            <button class="col-2 button" type="button" title="displaywordbankbutton" id="displaywordbankbutton"
+                style="display: none;"
+                onclick="displayWords();showButtons();hide('keyboard', 'displaywordbankbutton');show('keyboardbutton');">Display
+                WordBank</button>
+            <button class="col-2 button" type="button" title="displaykeyboardbutton" id="keyboardbutton"
+                style="display: none;"
+                onclick="hideButtons();hideSingle('keyboardbutton');show('displaywordbankbutton');show('keyboard');">
+                <i class="bi bi-keyboard"></i>
+                Display Keyboard</button>
         </div>
     </div>
 
     <div>
-    <div id="keyboard" style="display: none;">
-        <div>
-            <button title="number 1" type="button" class="button" onclick="addChar(1);">1</button>
-            <button title="number 2" type="button" class="button" onclick="addChar(2);">2</button>
-            <button title="number 3" type="button" class="button" onclick="addChar(3);">3</button>
-            <button title="number 4" type="button" class="button" onclick="addChar(4);">4</button>
-            <button title="number 5" type="button" class="button" onclick="addChar(5);">5</button>
-            <button title="number 6" type="button" class="button" onclick="addChar(6);">6</button>
-            <button title="number 7" type="button" class="button" onclick="addChar(7);">7</button>
-            <button title="number 8" type="button" class="button" onclick="addChar(8);">8</button>
-            <button title="number 9" type="button" class="button" onclick="addChar(9);">9</button>
-            <button title="number 0" type="button" class="button" onclick="addChar(0);">0</button>
-            <button title="exclamation mark" type="button" class="button" onclick="addChar('!');">!</button>
-            <button title="question mark" type="button" class="button" onclick="addChar('?');">?</button>
-            <button title="underscore" type="button" class="button" onclick="addChar('_');">_</button>
-            <button title="delete" type="button" class="button" id="delete" onclick="addChar('delete');">delete</button>
-        </div>
-        <div>
-            <button title="tab" type="button" class="button" id="tab" onclick="addChar('&#009');">tab</button>
-            <button title="q" type="button" class="button keyboardButton" onclick="addChar('q');">q</button>
-            <button title="w" type="button" class="button keyboardButton" onclick="addChar('w');">w</button>
-            <button title="e" type="button" class="button keyboardButton" onclick="addChar('e');">e</button>
-            <button title="r" type="button" class="button keyboardButton" onclick="addChar('r');">r</button>
-            <button title="t" type="button" class="button keyboardButton" onclick="addChar('t');">t</button>
-            <button title="y" type="button" class="button keyboardButton" onclick="addChar('y');">y</button>
-            <button title="u" type="button" class="button keyboardButton" onclick="addChar('u');">u</button> 
-            <button title="i" type="button" class="button keyboardButton" onclick="addChar('i');">i</button>
-            <button title="o" type="button" class="button keyboardButton" onclick="addChar('o');">o</button>
-            <button title="p" type="button" class="button keyboardButton" onclick="addChar('p');">p</button>
-            <button title=":" type="button" class="button" onclick="addChar(':');">:</button>
-            <button title="double quotation mark" type="button" class="button" onclick="addChar('&#34');">"</button>
-            <button title="caret - circumflex" type="button" class="button" onclick="addChar('^');">^</button>
-        </div>
-        <div>
-            <button title="caps lock" type="button" class="button" id="capsLock" onclick="toggleCapsLock();">caps lock</button>
-            <button title="a" type="button" class="button keyboardButton" onclick="addChar('a');">a</button>
-            <button title="s" type="button" class="button keyboardButton" onclick="addChar('s');">s</button>
-            <button title="d" type="button" class="button keyboardButton" onclick="addChar('d');">d</button>
-            <button title="f" type="button" class="button keyboardButton" onclick="addChar('f');">f</button>
-            <button title="g" type="button" class="button keyboardButton" onclick="addChar('g');">g</button>
-            <button title="h" type="button" class="button keyboardButton" onclick="addChar('h');">h</button>
-            <button title="j" type="button" class="button keyboardButton" onclick="addChar('j');">j</button>
-            <button title="k" type="button" class="button keyboardButton" onclick="addChar('k');">k</button>
-            <button title="l" type="button" class="button keyboardButton" onclick="addChar('l');">l</button>
-            <button title=";" type="button" class="button" onclick="addChar(';');">;</button>
-            <button title="single quotation mark" type="button" class="button" onclick="addChar('\'');">'</button>
-            <button title="return" type="button" class="button" id="return" onclick="addChar('\n');">return</button>
-        </div>
-        <div>
-            <button title="shift" type="button" class="button" id="shift" onclick="toggleShift();">shift</button>
-            <button title="z" type="button" class="button keyboardButton" onclick="addChar('z');">z</button>
-            <button title="x" type="button" class="button keyboardButton" onclick="addChar('x');">x</button>
-            <button title="c" type="button" class="button keyboardButton" onclick="addChar('c');">c</button>
-            <button title="v" type="button" class="button keyboardButton" onclick="addChar('v');">v</button>
-            <button title="b" type="button" class="button keyboardButton" onclick="addChar('b');">b</button>
-            <button title="n" type="button" class="button keyboardButton" onclick="addChar('n');">n</button>
-            <button title="m" type="button" class="button keyboardButton" onclick="addChar('m');">m</button>
-            <button title="comma" type="button" class="button" onclick="addChar(',');">,</button>
-            <button title="period" type="button" class="button" onclick="addChar('.');">.</button>
-            <button title="forward slash" type="button" class="button" onclick="addChar('/');">/</button>
-            <button title="shift" type="button" class="button" id="shift" onclick="toggleShift();">shift</button>
-        </div>
-        <div>
+        <div id="keyboard" style="display: none;">
+            <div>
+                <button title="number 1" type="button" class="button" onclick="addChar(1);">1</button>
+                <button title="number 2" type="button" class="button" onclick="addChar(2);">2</button>
+                <button title="number 3" type="button" class="button" onclick="addChar(3);">3</button>
+                <button title="number 4" type="button" class="button" onclick="addChar(4);">4</button>
+                <button title="number 5" type="button" class="button" onclick="addChar(5);">5</button>
+                <button title="number 6" type="button" class="button" onclick="addChar(6);">6</button>
+                <button title="number 7" type="button" class="button" onclick="addChar(7);">7</button>
+                <button title="number 8" type="button" class="button" onclick="addChar(8);">8</button>
+                <button title="number 9" type="button" class="button" onclick="addChar(9);">9</button>
+                <button title="number 0" type="button" class="button" onclick="addChar(0);">0</button>
+                <button title="exclamation mark" type="button" class="button" onclick="addChar('!');">!</button>
+                <button title="question mark" type="button" class="button" onclick="addChar('?');">?</button>
+                <button title="underscore" type="button" class="button" onclick="addChar('_');">_</button>
+                <button title="delete" type="button" class="button" id="delete"
+                    onclick="addChar('delete');">delete</button>
+            </div>
+            <div>
+                <button title="tab" type="button" class="button" id="tab" onclick="addChar('&#009');">tab</button>
+                <button title="q" type="button" class="button keyboardButton" onclick="addChar('q');">q</button>
+                <button title="w" type="button" class="button keyboardButton" onclick="addChar('w');">w</button>
+                <button title="e" type="button" class="button keyboardButton" onclick="addChar('e');">e</button>
+                <button title="r" type="button" class="button keyboardButton" onclick="addChar('r');">r</button>
+                <button title="t" type="button" class="button keyboardButton" onclick="addChar('t');">t</button>
+                <button title="y" type="button" class="button keyboardButton" onclick="addChar('y');">y</button>
+                <button title="u" type="button" class="button keyboardButton" onclick="addChar('u');">u</button>
+                <button title="i" type="button" class="button keyboardButton" onclick="addChar('i');">i</button>
+                <button title="o" type="button" class="button keyboardButton" onclick="addChar('o');">o</button>
+                <button title="p" type="button" class="button keyboardButton" onclick="addChar('p');">p</button>
+                <button title=":" type="button" class="button" onclick="addChar(':');">:</button>
+                <button title="double quotation mark" type="button" class="button" onclick="addChar('&#34');">"</button>
+                <button title="caret - circumflex" type="button" class="button" onclick="addChar('^');">^</button>
+            </div>
+            <div>
+                <button title="caps lock" type="button" class="button" id="capsLock" onclick="toggleCapsLock();">caps
+                    lock</button>
+                <button title="a" type="button" class="button keyboardButton" onclick="addChar('a');">a</button>
+                <button title="s" type="button" class="button keyboardButton" onclick="addChar('s');">s</button>
+                <button title="d" type="button" class="button keyboardButton" onclick="addChar('d');">d</button>
+                <button title="f" type="button" class="button keyboardButton" onclick="addChar('f');">f</button>
+                <button title="g" type="button" class="button keyboardButton" onclick="addChar('g');">g</button>
+                <button title="h" type="button" class="button keyboardButton" onclick="addChar('h');">h</button>
+                <button title="j" type="button" class="button keyboardButton" onclick="addChar('j');">j</button>
+                <button title="k" type="button" class="button keyboardButton" onclick="addChar('k');">k</button>
+                <button title="l" type="button" class="button keyboardButton" onclick="addChar('l');">l</button>
+                <button title=";" type="button" class="button" onclick="addChar(';');">;</button>
+                <button title="single quotation mark" type="button" class="button" onclick="addChar('\'');">'</button>
+                <button title="return" type="button" class="button" id="return" onclick="addChar('\n');">return</button>
+            </div>
+            <div>
+                <button title="shift" type="button" class="button" id="shift" onclick="toggleShift();">shift</button>
+                <button title="z" type="button" class="button keyboardButton" onclick="addChar('z');">z</button>
+                <button title="x" type="button" class="button keyboardButton" onclick="addChar('x');">x</button>
+                <button title="c" type="button" class="button keyboardButton" onclick="addChar('c');">c</button>
+                <button title="v" type="button" class="button keyboardButton" onclick="addChar('v');">v</button>
+                <button title="b" type="button" class="button keyboardButton" onclick="addChar('b');">b</button>
+                <button title="n" type="button" class="button keyboardButton" onclick="addChar('n');">n</button>
+                <button title="m" type="button" class="button keyboardButton" onclick="addChar('m');">m</button>
+                <button title="comma" type="button" class="button" onclick="addChar(',');">,</button>
+                <button title="period" type="button" class="button" onclick="addChar('.');">.</button>
+                <button title="forward slash" type="button" class="button" onclick="addChar('/');">/</button>
+                <button title="shift" type="button" class="button" id="shift" onclick="toggleShift();">shift</button>
+            </div>
+            <div>
 
-            <button title="number sign" type="button" class="button" onclick="addChar('#');">#</button>
-            <button title="dollar sign" type="button" class="button" onclick="addChar('$');">$</button>
-            <button title="percent sign" type="button" class="button" onclick="addChar('%');">%</button>
-            <button title="open paranthesis" type="button" class="button" onclick="addChar('&#40');">(</button>
-            <button title="close paranthesis" type="button" class="button" onclick="addChar('&#41');">)</button>
-            <button title="space" type="button" class="button" id="space" onclick="addChar('&#32');">space</button>
-            <button title="asterik" type="button" class="button" onclick="addChar('*');">*</button>
-            <button title="hyphen" type="button" class="button" onclick="addChar('-');">-</button>
-            <button title="plus sign" type="button" class="button" onclick="addChar('+');">+</button>
-            <button title="equals sign" type="button" class="button" onclick="addChar('=');">=</button>
+                <button title="number sign" type="button" class="button" onclick="addChar('#');">#</button>
+                <button title="dollar sign" type="button" class="button" onclick="addChar('$');">$</button>
+                <button title="percent sign" type="button" class="button" onclick="addChar('%');">%</button>
+                <button title="open paranthesis" type="button" class="button" onclick="addChar('&#40');">(</button>
+                <button title="close paranthesis" type="button" class="button" onclick="addChar('&#41');">)</button>
+                <button title="space" type="button" class="button" id="space" onclick="addChar('&#32');">space</button>
+                <button title="asterik" type="button" class="button" onclick="addChar('*');">*</button>
+                <button title="hyphen" type="button" class="button" onclick="addChar('-');">-</button>
+                <button title="plus sign" type="button" class="button" onclick="addChar('+');">+</button>
+                <button title="equals sign" type="button" class="button" onclick="addChar('=');">=</button>
+            </div>
         </div>
+        <div id="words" style="display: none;"></div>
     </div>
-    <div id="words" style="display: none;"></div>   
-    </div>
-    
+
 </body>
+
 </html>

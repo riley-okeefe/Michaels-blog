@@ -27,8 +27,8 @@
   min-width: 180px;
   width: 180px;
   cursor: pointer;
+  border-color: #1b2164;
 }
-
 .button {
   background-color: #1b2164;
   border-color: #1b2164;
@@ -44,17 +44,17 @@
 button:hover {
   background-color: #a02e32;
 }
-.saveButtons {
-  height: 55px;
-  width: 120px;
-  margin: 10px;
+#save {
+  height: 50px;
+  width: 150px;
+  margin: 5px;
 }
 #cancel {
-  background-color: #eb0008;
-  border-color: #a02e32;
-  height: 55px;
+  background-color: #8b080c;
+  border-color: #8b080c;
+  height: 50px;
   width: 150px;
-  margin: 10px;
+  margin: 5px;
 }
 #cancel:hover {
   background-color: red;
@@ -65,7 +65,8 @@ button:hover {
   border: 1px solid #1b2164;
   box-shadow: 0 0 10px #1b2164;
   resize: none;
-  margin-left: 2px;
+  margin-left: 5px;
+  caret-color: #a02e32;
 }
 #delete {
   background-color: #a02e32;
@@ -102,20 +103,20 @@ button:hover {
   font-size: 20px;
   border: 1px solid #1b2164;
   box-shadow: 0 0 10px #1b2164;
-  margin: 3px;
+  margin: 4px;
 }
 #wordbankbutton {
-  height: 35px;
+  height: 40px;
   min-width: 200px;
   font-size: large;
 }
 #displaywordbankbutton {
-  height: 35px;
+  height: 40px;
   min-width: 200px;
   font-size: large;
 }
 #keyboardbutton {
-  height: 35px;
+  height: 40px;
   min-width: 200px;
   font-size: large;
 }
