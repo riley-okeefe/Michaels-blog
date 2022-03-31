@@ -7,7 +7,7 @@
   This file defines the functionality of the P1.html file by hiding and showing elements
   on the screen and by saving the blogs to storage and/or the server.
 */
-const SERVER_URL = "http://140.184.230.209:3039";
+const SERVER_URL = "http://140.184.230.209:3172";
 
 let shift = false;
 let capsLock = false;
@@ -75,12 +75,10 @@ function addChar(selection) {
 // save blog to local storage
 function saveBlog(blog, blogID) {
   if (typeof Storage !== "undefined") {
-    if (typeof Storage !== "undefined") {
-      window.localStorage.setItem(blogID, document.getElementById(blog).value);
-    }
+    window.localStorage.setItem(blogID, document.getElementById(blog).value);
   }
 
-  $.get(SERVER_URL + "/inputBox", callback1).fail(errorCallback1);
+  $.get(SERVER_URL + "/", callback1("1")).fail(errorCallback1);
   // save to the server
   $("#save").on("click", function () {
     let x = { input: document.getElementById("inputBox").value };
@@ -152,16 +150,8 @@ function showKeyboard(kbd, input, buttons) {
   }
 }
 
-// function setup(){
-//   $("#save").on("click", function (){
-//     let x = {input: document.getElementById("inputBox").value};
-//      $.post(SERVER_UR + "/inputBox", x).fail(errorCallback1);
-//  });
-// }
-
-function callback1(returnedData) {
-  console.log(returnedData);
-  document.getElementById("inputBox").value = returnedData[0];
+function callback1(returnedData, blogID) {
+  document.getElementById("inputBox").value = returnedData[blogID - 1];
 }
 
 function errorCallback1(err) {

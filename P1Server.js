@@ -1,6 +1,6 @@
 const express = require("express");
 const server = express();
-const port = 3039;
+const port = 3172;
 const blogs = ["", "", ""];
 
 server.use(express.json());
@@ -18,24 +18,24 @@ server.use(allowCrossDomain);
 // upon receivign a post at this url save value ot blog
 server.post("/blog1", function (req, res) {
   blogs[0] = req.body.input;
+  console.log("input:" + req.body.input)
   let obj = { input: blogs[0] };
-  console.log(obj);
   return res.status(200).send(obj);
 });
 
 // upon receivign a post at this url execute callback function and save value ot blog
 server.post("/blog2", function (req, res) {
   blogs[1] = req.body.input;
+  console.log("input:" + req.body.input)
   let obj = { input: blogs[1] };
-  console.log(obj);
   return res.status(200).send(obj);
 });
 
 // upon receivign a post at this url execute callback function and save value ot blog
 server.post("/blog3", function (req, res) {
   blogs[2] = req.body.input;
+  console.log("input:" + req.body.input)
   let obj = { input: blogs[2] };
-  console.log(obj);
   return res.status(200).send(obj);
 });
 
@@ -44,5 +44,5 @@ server.get("/", (req, res) => res.status(200).send(blogs));
 
 // display the port the server is listening on
 server.listen(port, function () {
-  console.log("Listening on port 4300");
+  console.log("Listening on port 3172");
 });
