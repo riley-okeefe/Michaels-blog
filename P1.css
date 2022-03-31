@@ -97,24 +97,28 @@ button:hover {
   border-color: #a02e32;
   width: 419px;
 }
+#wordbankinput {
+  border-radius: 5px;
+  font-size: 20px;
+  border: 1px solid #1b2164;
+  box-shadow: 0 0 10px #1b2164;
+  margin: 3px;
+}
 #wordbankbutton {
   height: 35px;
   min-width: 200px;
   font-size: large;
 }
-
 #displaywordbankbutton {
   height: 35px;
   min-width: 200px;
   font-size: large;
 }
-
 #keyboardbutton {
   height: 35px;
   min-width: 200px;
   font-size: large;
 }
-
 .wordbutton {
   height: auto;
   min-width: auto;
