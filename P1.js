@@ -150,12 +150,9 @@ function showKeyboard(kbd, input, buttons) {
   }
 }
 
-
 function show(hidden) {
   let a = document.getElementById(hidden);
-  if (
-    a.style.display === "none"
-  ) {
+  if (a.style.display === "none") {
     a.style.display = "block";
   } else {
     a.style.display = "none";
@@ -178,10 +175,10 @@ function errorCallback1(err) {
   console.log(err.responseText);
 }
 
-function saveWords() { 
+function saveWords() {
   var input = document.getElementById("wordbankinput").value;
   if (input.length != 0) {
-  arrayOfWord.push(input);
+    arrayOfWord.push(input);
   }
   document.getElementById("wordbankinput").value = "";
 }
@@ -193,38 +190,26 @@ the one specified on the button.
 function displayWords() {
   var display = arrayOfWord;
   arrayOfWord = [];
-  if (
-    $(document.getElementById("first")).is(":checked") ||
-    $(document.getElementById("second")).is(":checked") ||
-    $(document.getElementById("third")).is(":checked") 
-  ) {
+
   for (var i = 0; i < display.length; i++) {
     var btn = document.createElement("button");
     var t = document.createTextNode(display[i]);
     btn.appendChild(t);
     document.body.appendChild(btn);
-    btn.className = "wordbutton"
+    btn.className = "wordbutton";
     btn.onclick = function addWord() {
       let currChars = $("#inputBox").val();
       $("#inputBox").val(currChars.concat(t.nodeValue) + " ");
-      
-    }
+    };
   }
 }
-}  
 
 function hideButtons() {
   $(".wordbutton").hide();
 }
 
 function showButtons() {
-  if (
-    $(document.getElementById("first")).is(":checked") ||
-    $(document.getElementById("second")).is(":checked") ||
-    $(document.getElementById("third")).is(":checked") 
-  ) {
-  $(".wordbutton").show();
-  }
+    $(".wordbutton").show();
 }
 
 function hideSingle(shown) {
@@ -235,5 +220,3 @@ function hideSingle(shown) {
     x.style.display = "none";
   }
 }
-
-

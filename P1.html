@@ -127,8 +127,9 @@
                 onclick="saveWords();">Save to WordBank</button>
             <button class="col-2 button" type="button" title="displaywordbankbutton" id="displaywordbankbutton"
                 style="display: none;"
-                onclick="displayWords();showButtons();hide('keyboard', 'displaywordbankbutton');show('keyboardbutton');">Display
-                WordBank</button>
+                onclick="displayWords();showButtons();hide('keyboard', 'displaywordbankbutton');show('keyboardbutton');">
+                <i class="bi bi-bookmark-star"></i>
+                Display WordBank</button>
             <button class="col-2 button" type="button" title="displaykeyboardbutton" id="keyboardbutton"
                 style="display: none;"
                 onclick="hideButtons();hideSingle('keyboardbutton');show('displaywordbankbutton');show('keyboard');">
@@ -136,8 +137,6 @@
                 Display Keyboard</button>
         </div>
     </div>
-
-    <div>
         <div id="keyboard" style="display: none;">
             <div>
                 <button title="number 1" type="button" class="button" onclick="addChar(1);">1</button>
