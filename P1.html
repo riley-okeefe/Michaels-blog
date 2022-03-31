@@ -51,8 +51,8 @@
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="firstEditSwitch"> 
-                <input class="form-check-input switchSize"
-                    onclick="getBlog('1'); showKeyboard('keyboard', 'inputArea', 'buttons1'); hide('secondEditSwitch', 'thirdEditSwitch'); hide('secondRow', 'thirdRow')"
+                <input class="form-check-input switchSize" id="first"
+                    onclick="getBlog('1'); showKeyboard('keyboard', 'inputArea', 'buttons1'); hide('secondEditSwitch', 'thirdEditSwitch'); hide('secondRow', 'thirdRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -69,8 +69,8 @@
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="secondEditSwitch">
-                <input class="form-check-input switchSize"
-                    onclick="getBlog('2'); showKeyboard('keyboard', 'inputArea', 'buttons2'); hide('firstEditSwitch', 'thirdEditSwitch'); hide('firstRow', 'thirdRow');"
+                <input class="form-check-input switchSize" id="second"
+                    onclick="getBlog('2'); showKeyboard('keyboard', 'inputArea', 'buttons2'); hide('firstEditSwitch', 'thirdEditSwitch'); hide('firstRow', 'thirdRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -87,8 +87,8 @@
         </div>
         <div class="col-2">
             <div class="form-check form-switch" id="thirdEditSwitch">
-                <input class="form-check-input switchSize"
-                    onclick="getBlog('3'); showKeyboard('keyboard', 'inputArea', 'buttons3'); hide('firstEditSwitch', 'secondEditSwitch'); hide('firstRow', 'secondRow');"
+                <input class="form-check-input switchSize" id="third"
+                    onclick="getBlog('3'); showKeyboard('keyboard', 'inputArea', 'buttons3'); hide('firstEditSwitch', 'secondEditSwitch'); hide('firstRow', 'secondRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -119,11 +119,13 @@
 
     <div>
         <div class="row m-3">
-            <input class="col-2" name="wordbankinput" id="wordbankinput" type="text"></textarea>
-            <button class="col-2 button" type="button" title="wordbankbutton" id="wordbankbutton"  onclick="saveWords();">Save to WordBank</button>
-            <button class="col-2 button" type="button" title="displaywordbankbutton" id="wordbankbutton" onclick="displayWords();">Display WordBank</button>
+            <input class="col-2" name="wordbankinput" id="wordbankinput" type="text" style="display: none;"></textarea>
+            <button class="col-2 button" type="button" title="wordbankbutton" id="wordbankbutton" style="display: none;" onclick="saveWords();">Save to WordBank</button>
+            <button class="col-2 button" type="button" title="displaywordbankbutton" id="displaywordbankbutton" style="display: none;" onclick="displayWords();showButtons();hide('keyboard', 'displaywordbankbutton');show('keyboardbutton');">Display WordBank</button>
+            <button class="col-2 button" type="button" title="displaykeyboardbutton" id="keyboardbutton" style="display: none;" onclick="hideButtons();hideSingle('keyboardbutton');show('displaywordbankbutton');show('keyboard');">Display Keyboard</button>
         </div>
     </div>
+
     <div>
     <div id="keyboard" style="display: none;">
         <div>
@@ -201,7 +203,7 @@
             <button title="equals sign" type="button" class="button" onclick="addChar('=');">=</button>
         </div>
     </div>
-    <div id="words"></div>
+    <div id="words" style="display: none;"></div>   
     </div>
     
 </body>

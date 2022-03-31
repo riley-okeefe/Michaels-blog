@@ -150,8 +150,28 @@ function showKeyboard(kbd, input, buttons) {
   }
 }
 
-function callback1(returnedData, blogID) {
-  document.getElementById("inputBox").value = returnedData[blogID - 1];
+
+function show(hidden) {
+  let a = document.getElementById(hidden);
+  if (
+    a.style.display === "none"
+  ) {
+    a.style.display = "block";
+  } else {
+    a.style.display = "none";
+  }
+}
+
+// function setup(){
+//   $("#save").on("click", function (){
+//     let x = {input: document.getElementById("inputBox").value};
+//      $.post(SERVER_UR + "/inputBox", x).fail(errorCallback1);
+//  });
+// }
+
+function callback1(returnedData) {
+  console.log(returnedData);
+  document.getElementById("inputBox").value = returnedData[0];
 }
 
 function errorCallback1(err) {
@@ -166,11 +186,54 @@ function saveWords() {
   document.getElementById("wordbankinput").value = "";
 }
 
+/*
+this is where the issue is, when the word banks buttons are pressed it only returns the most recent word entered rather than 
+the one specified on the button.
+*/
 function displayWords() {
-  for (var i = 0; i < arrayOfWord.length; i++) {
+  var display = arrayOfWord;
+  arrayOfWord = [];
+  if (
+    $(document.getElementById("first")).is(":checked") ||
+    $(document.getElementById("second")).is(":checked") ||
+    $(document.getElementById("third")).is(":checked") 
+  ) {
+  for (var i = 0; i < display.length; i++) {
     var btn = document.createElement("button");
-    var t = document.createTextNode(arrayOfWord[i]);
+    var t = document.createTextNode(display[i]);
     btn.appendChild(t);
     document.body.appendChild(btn);
+    btn.className = "wordbutton"
+    btn.onclick = function addWord() {
+      let currChars = $("#inputBox").val();
+      $("#inputBox").val(currChars.concat(t.nodeValue) + " ");
+      
+    }
   }
 }
+}  
+
+function hideButtons() {
+  $(".wordbutton").hide();
+}
+
+function showButtons() {
+  if (
+    $(document.getElementById("first")).is(":checked") ||
+    $(document.getElementById("second")).is(":checked") ||
+    $(document.getElementById("third")).is(":checked") 
+  ) {
+  $(".wordbutton").show();
+  }
+}
+
+function hideSingle(shown) {
+  let x = document.getElementById(shown);
+  if (x.style.display === "none") {
+    x.style.display = "flex";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
