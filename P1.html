@@ -115,14 +115,14 @@
                 onclick="saveBlog('inputBox', '3');">save</button>
             <button type="button" class="button" title="cancel" id="cancel" onclick="cancelBlog('3');">cancel</button>
         </div>
-        <div id="inputArea" style="display: none;">
-            <textarea name="inputBox" id="inputBox" cols="104" rows="8" autocapitalize="on"></textarea>
+        <div id="inputArea" style="display: none;" onmouseenter="activeBox('inputBox');">
+            <textarea name="inputBox" id="inputBox" cols="104" rows="8" autocapitalize="on" ></textarea>
         </div>
     </div>
 
     <div>
         <div class="row m-3">
-            <input class="col-2" name="wordbankinput" id="wordbankinput" type="text" style="display: none;"></textarea>
+            <input class="col-2" name="wordbankinput" id="wordbankinput" type="text" style="display: none;" onmouseenter="activeBox('wordbankinput');"></input>
             <button class="col-2 button" type="button" title="wordbankbutton" id="wordbankbutton" style="display: none;"
                 onclick="saveWords();">Save to WordBank</button>
             <button class="col-2 button" type="button" title="displaywordbankbutton" id="displaywordbankbutton"

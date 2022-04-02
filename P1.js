@@ -12,6 +12,8 @@ const SERVER_URL = "http://140.184.230.209:3172";
 let shift = false;
 let capsLock = false;
 let keyboardButtons = document.getElementsByClassName("keyboardButton");
+let inputBoxStatus = false;
+let wordBankInputStatus = false;
 
 var arrayOfWord = [];
 
@@ -53,25 +55,48 @@ function toggleCapsLock() {
     document.getElementById("capsLock").style.color = "#ffffff";
   }
 }
-
-// add or delete characters to/from input area
+// defines active input box to be used for keyboard input
+function activeBox(inputBoxID) {
+  if (inputBoxID === "inputBox") {
+    inputBoxStatus = true;
+  } else if (inputBoxID === "wordbankinput") {
+    wordBankInputStatus = true;
+  }
+}
+// add or delete characters to from input area
 function addChar(selection) {
-  let currChars = $("#inputBox").val();
-  if (selection === "delete") {
-    $("#inputBox").val(currChars.substring(0, currChars.length - 1));
-  } else {
-    if (capsLock === true && isNaN(selection)) {
-      $("#inputBox").val(currChars.concat(selection.toUpperCase()));
-    } else if (shift === true && isNaN(selection)) {
-      $("#inputBox").val(currChars.concat(selection.toUpperCase()));
-      shift = false;
-      shiftKeys("false");
+  if (inputBoxStatus) {
+    let currChars = $("#inputBox").val();
+    if (selection === "delete") {
+      $("#inputBox").val(currChars.substring(0, currChars.length - 1));
     } else {
-      $("#inputBox").val(currChars.concat(selection));
+      if (capsLock === true && isNaN(selection)) {
+        $("#inputBox").val(currChars.concat(selection.toUpperCase()));
+      } else if (shift === true && isNaN(selection)) {
+        $("#inputBox").val(currChars.concat(selection.toUpperCase()));
+        shift = false;
+        shiftKeys("false");
+      } else {
+        $("#inputBox").val(currChars.concat(selection));
+      }
+    }
+  } else if (wordBankInputStatus) {
+    let currChars = $("#wordbankinput").val();
+    if (selection === "delete") {
+      $("#wordbankinput").val(currChars.substring(0, currChars.length - 1));
+    } else {
+      if (capsLock === true && isNaN(selection)) {
+        $("#wordbankinput").val(currChars.concat(selection.toUpperCase()));
+      } else if (shift === true && isNaN(selection)) {
+        $("#wordbankinput").val(currChars.concat(selection.toUpperCase()));
+        shift = false;
+        shiftKeys("false");
+      } else {
+        $("#wordbankinput").val(currChars.concat(selection));
+      }
     }
   }
 }
-
 // save blog to local storage
 function saveBlog(blog, blogID) {
   if (typeof Storage !== "undefined") {
@@ -204,14 +229,15 @@ function displayWords() {
   }
 }
 
+// hides wordbank button
 function hideButtons() {
   $(".wordbutton").hide();
 }
-
+// shows wordbank button
 function showButtons() {
-    $(".wordbutton").show();
+  $(".wordbutton").show();
 }
-
+// hides a single wordbank button
 function hideSingle(shown) {
   let x = document.getElementById(shown);
   if (x.style.display === "none") {
