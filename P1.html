@@ -127,14 +127,16 @@
                 onclick="saveWords();">Save to WordBank</button>
             <button class="col-2 button" type="button" title="displaywordbankbutton" id="displaywordbankbutton"
                 style="display: none;"
-                onclick="displayWords();showButtons();hide('keyboard', 'displaywordbankbutton');show('keyboardbutton');">
+                onclick="displayWords();showButtons(); hide('keyboard', 'displaywordbankbutton'); show('deleteButton'); show('keyboardbutton');">
                 <i class="bi bi-bookmark-star"></i>
                 Display WordBank</button>
             <button class="col-2 button" type="button" title="displaykeyboardbutton" id="keyboardbutton"
                 style="display: none;"
-                onclick="hideButtons();hideSingle('keyboardbutton');show('displaywordbankbutton');show('keyboard');">
+                onclick="hideButtons(); hideSingle('keyboardbutton'); show('displaywordbankbutton'); show('keyboard'); hide('deleteButton');" >
                 <i class="bi bi-keyboard"></i>
                 Display Keyboard</button>
+                <button class="col-2 button" type="button" id="deleteButton" style="display: none;"><i class="bi bi-x-circle-fill"></i>
+                    Delete Words from WordBank</button>
         </div>
     </div>
         <div id="keyboard" style="display: none;">

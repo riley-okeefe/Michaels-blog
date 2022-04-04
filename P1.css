@@ -43,6 +43,7 @@
 }
 button:hover {
   background-color: #a02e32;
+  transform: scale(1.1);
 }
 #save {
   height: 50px;
@@ -118,6 +119,11 @@ button:hover {
 #keyboardbutton {
   height: 40px;
   min-width: 200px;
+  font-size: large;
+}
+#deleteButton {
+  height: 40px;
+  min-width: 290px;
   font-size: large;
 }
 .wordbutton {
