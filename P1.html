@@ -25,7 +25,7 @@
     <title>Michael's Blog</title>
 </head>
 
-<body>
+<body onload="getServer1();">
     <!-- Headers for blog names, edit switches, and publish switches -->
     <div class="row">
         <div class="col-sm-2 headerText">
@@ -52,7 +52,7 @@
         <div class="col-2">
             <div class="form-check form-switch" id="firstEditSwitch">
                 <input class="form-check-input switchSize" id="first"
-                    onclick="getBlog('1'); showKeyboard('keyboard', 'inputArea', 'buttons1'); hide('secondEditSwitch', 'thirdEditSwitch'); hide('secondRow', 'thirdRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
+                    onclick="getBlog('1'); showKeyboard('keyboard', 'inputArea1', 'buttons1'); hide('secondEditSwitch', 'thirdEditSwitch'); hide('secondRow', 'thirdRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -70,7 +70,7 @@
         <div class="col-2">
             <div class="form-check form-switch" id="secondEditSwitch">
                 <input class="form-check-input switchSize" id="second"
-                    onclick="getBlog('2'); showKeyboard('keyboard', 'inputArea', 'buttons2'); hide('firstEditSwitch', 'thirdEditSwitch'); hide('firstRow', 'thirdRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
+                    onclick="getBlog('2'); showKeyboard('keyboard', 'inputArea2', 'buttons2'); hide('firstEditSwitch', 'thirdEditSwitch'); hide('firstRow', 'thirdRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -88,7 +88,7 @@
         <div class="col-2">
             <div class="form-check form-switch" id="thirdEditSwitch">
                 <input class="form-check-input switchSize" id="third"
-                    onclick="getBlog('3'); showKeyboard('keyboard', 'inputArea', 'buttons3'); hide('firstEditSwitch', 'secondEditSwitch'); hide('firstRow', 'secondRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
+                    onclick="getBlog('3'); showKeyboard('keyboard', 'inputArea3', 'buttons3'); hide('firstEditSwitch', 'secondEditSwitch'); hide('firstRow', 'secondRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -101,22 +101,28 @@
 
     <div>
         <div id="buttons1" style="display: none;">
-            <button type="button" class="button" title="save" id="save"
-                onclick="saveBlog('inputBox', '1');">save</button>
+            <button type="button" class="button" title="save" id="save1"
+                onclick="saveBlog('inputBox1', '1');">save</button>
             <button type="button" class="button" title="cancel" id="cancel" onclick="cancelBlog('1');">cancel</button>
         </div>
         <div id="buttons2" style="display: none;">
-            <button type=" button" class="button" title="save" id="save"
-                onclick="saveBlog('inputBox', '2');">save</button>
+            <button type=" button" class="button" title="save" id="save2"
+                onclick="saveBlog('inputBox2', '2');">save</button>
             <button type=" button" class="button" title="cancel" id="cancel" onclick="cancelBlog('2');">cancel</button>
         </div>
         <div id="buttons3" style="display: none;">
-            <button type="button" class="button" title="save" id="save"
-                onclick="saveBlog('inputBox', '3');">save</button>
+            <button type="button" class="button" title="save" id="save3"
+                onclick="saveBlog('inputBox3', '3');">save</button>
             <button type="button" class="button" title="cancel" id="cancel" onclick="cancelBlog('3');">cancel</button>
         </div>
-        <div id="inputArea" style="display: none;" onmouseenter="activeBox('inputBox');">
-            <textarea name="inputBox" id="inputBox" cols="104" rows="8" autocapitalize="on" ></textarea>
+        <div id="inputArea1" style="display: none;" onmouseenter="activeBox('inputBox1');">
+            <textarea name="inputBox" id="inputBox1" cols="104" rows="8" autocapitalize="on" ></textarea>
+        </div>
+        <div id="inputArea2" style="display: none;" onmouseenter="activeBox('inputBox2');">
+            <textarea name="inputBox" id="inputBox2" cols="104" rows="8" autocapitalize="on" ></textarea>
+        </div>
+        <div id="inputArea3" style="display: none;" onmouseenter="activeBox('inputBox3');">
+            <textarea name="inputBox" id="inputBox3" cols="104" rows="8" autocapitalize="on" ></textarea>
         </div>
     </div>
 

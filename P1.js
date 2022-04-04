@@ -12,7 +12,9 @@ const SERVER_URL = "http://140.184.230.209:3172";
 let shift = false;
 let capsLock = false;
 let keyboardButtons = document.getElementsByClassName("keyboardButton");
-let inputBoxStatus = false;
+let inputBoxStatus1 = false;
+let inputBoxStatus2 = false;
+let inputBoxStatus3 = false;
 let wordBankInputStatus = false;
 
 var arrayOfWord = [];
@@ -57,27 +59,67 @@ function toggleCapsLock() {
 }
 // defines active input box to be used for keyboard input
 function activeBox(inputBoxID) {
-  if (inputBoxID === "inputBox") {
-    inputBoxStatus = true;
+  if (inputBoxID === "inputBox1") {
+    inputBoxStatus1 = true;
   } else if (inputBoxID === "wordbankinput") {
+    wordBankInputStatus = true;
+  } else if (inputBoxID === "inputBox2"){
+    inputBoxStatus2 = true;
+  } else if (inputBoxID === "wordBankinput"){
+    wordBankInputStatus = true;
+  }  else if (inputBoxID === "inputBox3"){
+    inputBoxStatus3 = true;
+  } else if (inputBoxID === "wordBankinput"){
     wordBankInputStatus = true;
   }
 }
 // add or delete characters to from input area
 function addChar(selection) {
-  if (inputBoxStatus) {
-    let currChars = $("#inputBox").val();
+  if (inputBoxStatus1) {
+    let currChars = $("#inputBox1").val();
     if (selection === "delete") {
-      $("#inputBox").val(currChars.substring(0, currChars.length - 1));
+      $("#inputBox1").val(currChars.substring(0, currChars.length - 1));
     } else {
       if (capsLock === true && isNaN(selection)) {
-        $("#inputBox").val(currChars.concat(selection.toUpperCase()));
+        $("#inputBox1").val(currChars.concat(selection.toUpperCase()));
       } else if (shift === true && isNaN(selection)) {
-        $("#inputBox").val(currChars.concat(selection.toUpperCase()));
+        $("#inputBox1").val(currChars.concat(selection.toUpperCase()));
         shift = false;
         shiftKeys("false");
       } else {
-        $("#inputBox").val(currChars.concat(selection));
+        $("#inputBox1").val(currChars.concat(selection));
+      }
+    }
+  }
+  if (inputBoxStatus2) {
+    let currChars = $("#inputBox2").val();
+    if (selection === "delete") {
+      $("#inputBox2").val(currChars.substring(0, currChars.length - 1));
+    } else {
+      if (capsLock === true && isNaN(selection)) {
+        $("#inputBox2").val(currChars.concat(selection.toUpperCase()));
+      } else if (shift === true && isNaN(selection)) {
+        $("#inputBox2").val(currChars.concat(selection.toUpperCase()));
+        shift = false;
+        shiftKeys("false");
+      } else {
+        $("#inputBox2").val(currChars.concat(selection));
+      }
+    }
+  }
+  if (inputBoxStatus3) {
+    let currChars = $("#inputBox3").val();
+    if (selection === "delete") {
+      $("#inputBox3").val(currChars.substring(0, currChars.length - 1));
+    } else {
+      if (capsLock === true && isNaN(selection)) {
+        $("#inputBox3").val(currChars.concat(selection.toUpperCase()));
+      } else if (shift === true && isNaN(selection)) {
+        $("#inputBox3").val(currChars.concat(selection.toUpperCase()));
+        shift = false;
+        shiftKeys("false");
+      } else {
+        $("#inputBox3").val(currChars.concat(selection));
       }
     }
   } else if (wordBankInputStatus) {
@@ -103,11 +145,19 @@ function saveBlog(blog, blogID) {
     window.localStorage.setItem(blogID, document.getElementById(blog).value);
   }
 
-  $.get(SERVER_URL + "/", callback1("1")).fail(errorCallback1);
+  //$.get(SERVER_URL + "/", callback1("1")).fail(errorCallback1);
   // save to the server
-  $("#save").on("click", function () {
-    let x = { input: document.getElementById("inputBox").value };
-    $.post(SERVER_URL + "/blog" + blogID, x).fail(errorCallback1);
+  $("#save1").on("click", function () {
+    let x = { input: document.getElementById("inputBox1").value };
+    $.post(SERVER_URL + "/blog1", x).fail(errorCallback1);
+  });
+  $("#save2").on("click", function () {
+    let x = { input: document.getElementById("inputBox2").value };
+    $.post(SERVER_URL + "/blog2", x).fail(errorCallback1);
+  });
+  $("#save3").on("click", function () {
+    let x = { input: document.getElementById("inputBox3").value };
+    $.post(SERVER_URL + "/blog3", x).fail(errorCallback1);
   });
 }
 
@@ -123,8 +173,23 @@ function cancelBlog(blogID) {
 
 // get the blog from local storage to the input box
 function getBlog(blogID) {
-  document.getElementById("inputBox").value =
+  document.getElementById("inputBox1").value =
     window.localStorage.getItem(blogID);
+}
+
+function getServer1(){
+  $.get(SERVER_URL + "/blog", callback1).fail(errorCallback1);
+}
+
+function callback1(returnedData) {
+  console.log(returnedData);
+  document.getElementById("inputBox1").value = returnedData[0];
+  document.getElementById("inputBox2").value = returnedData[1];
+  document.getElementById("inputBox3").value = returnedData[2];
+}
+
+function errorCallback1(err) {
+  console.log(err.responseText);
 }
 
 /*
@@ -190,11 +255,6 @@ function show(hidden) {
 //      $.post(SERVER_UR + "/inputBox", x).fail(errorCallback1);
 //  });
 // }
-
-function callback1(returnedData) {
-  console.log(returnedData);
-  document.getElementById("inputBox").value = returnedData[0];
-}
 
 function errorCallback1(err) {
   console.log(err.responseText);

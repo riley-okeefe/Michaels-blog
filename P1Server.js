@@ -40,7 +40,7 @@ server.post("/blog3", function (req, res) {
 });
 
 // upon receivign a post at this url execute callback function and save value ot blog
-server.get("/", (req, res) => res.status(200).send(blogs));
+server.get("/blog", (req, res) => res.status(200).send(blogs));
 
 // display the port the server is listening on
 server.listen(port, function () {
