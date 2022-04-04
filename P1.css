@@ -121,12 +121,13 @@ button:hover {
   font-size: large;
 }
 .wordbutton {
-  height: auto;
-  min-width: auto;
-  font-size: auto;
+  height: 50px;
+  min-width: 100px;
+  font-size: 20px;
   background-color: #1b2164;
   border-color: #1b2164;
   color: #ffffff;
   cursor: pointer;
   margin: 10px;
+  border-radius: 5px;
 }
