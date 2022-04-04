@@ -201,6 +201,7 @@ function errorCallback1(err) {
 }
 
 function saveWords() {
+
   var input = document.getElementById("wordbankinput").value;
   if (input.length != 0) {
     arrayOfWord.push(input);

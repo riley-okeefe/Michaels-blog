@@ -126,6 +126,9 @@ button:hover {
   min-width: 290px;
   font-size: large;
 }
+#deleteButton:hover {
+  background-color: red;
+}
 .wordbutton {
   height: 50px;
   min-width: 100px;
