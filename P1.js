@@ -185,10 +185,10 @@ function cancelBlog() {
 }
 
 // get the blog from local storage to the input box
-function getBlog(blogID) {
-  document.getElementById("inputBox1").value =
-    window.localStorage.getItem(blogID);
-}
+// function getBlog(blogID) {
+//   document.getElementById("inputBox1").value =
+//     window.localStorage.getItem(blogID);
+// }
 
 function getServer1() {
   $.get(SERVER_URL + "/blog", callback1).fail(errorCallback1);
