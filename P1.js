@@ -63,13 +63,13 @@ function activeBox(inputBoxID) {
     inputBoxStatus1 = true;
   } else if (inputBoxID === "wordbankinput") {
     wordBankInputStatus = true;
-  } else if (inputBoxID === "inputBox2"){
+  } else if (inputBoxID === "inputBox2") {
     inputBoxStatus2 = true;
-  } else if (inputBoxID === "wordBankinput"){
+  } else if (inputBoxID === "wordBankinput") {
     wordBankInputStatus = true;
-  }  else if (inputBoxID === "inputBox3"){
+  } else if (inputBoxID === "inputBox3") {
     inputBoxStatus3 = true;
-  } else if (inputBoxID === "wordBankinput"){
+  } else if (inputBoxID === "wordBankinput") {
     wordBankInputStatus = true;
   }
 }
@@ -141,9 +141,9 @@ function addChar(selection) {
 }
 // save blog to local storage
 function saveBlog(blog, blogID) {
-  if (typeof Storage !== "undefined") {
-    window.localStorage.setItem(blogID, document.getElementById(blog).value);
-  }
+  // if (typeof Storage !== "undefined") {
+  //   window.localStorage.setItem(blogID, document.getElementById(blog).value);
+  // }
 
   //$.get(SERVER_URL + "/", callback1("1")).fail(errorCallback1);
   // save to the server
@@ -162,11 +162,24 @@ function saveBlog(blog, blogID) {
 }
 
 // delete blog from local storage
-function cancelBlog(blogID) {
+function cancelBlog() {
   if (confirm("Are you sure you want to delete the blog entirely?") === true) {
     if (confirm("This action cannot be undone!") === true) {
-      window.localStorage.removeItem(blogID);
-      document.location.reload();
+      $("#cancel1").on("click", function () {
+        $.delete(SERVER_URL + "/blog1")
+        .fail(errorCallback1)
+        .reload();
+      });
+      $("#cancel2").on("click", function () {
+        $.delete(SERVER_URL + "/blog2")
+          .fail(errorCallback1)
+          .reload();
+      });
+      $("#cancel3").on("click", function () {
+        $.delete(SERVER_URL + "/blog3")
+          .fail(errorCallback1)
+          .reload();
+      });
     }
   }
 }
@@ -177,7 +190,7 @@ function getBlog(blogID) {
     window.localStorage.getItem(blogID);
 }
 
-function getServer1(){
+function getServer1() {
   $.get(SERVER_URL + "/blog", callback1).fail(errorCallback1);
 }
 
@@ -261,7 +274,6 @@ function errorCallback1(err) {
 }
 
 function saveWords() {
-
   var input = document.getElementById("wordbankinput").value;
   if (input.length != 0) {
     arrayOfWord.push(input);

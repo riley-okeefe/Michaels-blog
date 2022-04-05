@@ -50,14 +50,14 @@ button:hover {
   width: 150px;
   margin: 5px;
 }
-#cancel {
+.cancel {
   background-color: #8b080c;
   border-color: #8b080c;
   height: 50px;
   width: 150px;
   margin: 5px;
 }
-#cancel:hover {
+.cancel:hover {
   background-color: red;
 }
 .inputBox {
