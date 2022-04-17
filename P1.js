@@ -139,57 +139,85 @@ function addChar(selection) {
     }
   }
 }
-// save blog to local storage
-function saveBlog(blog, blogID) {
-  // if (typeof Storage !== "undefined") {
-  //   window.localStorage.setItem(blogID, document.getElementById(blog).value);
-  // }
 
-  //$.get(SERVER_URL + "/", callback1("1")).fail(errorCallback1);
-  // save to the server
-  $("#save1").on("click", function () {
-    let x = { input: document.getElementById("inputBox1").value };
-    $.post(SERVER_URL + "/blog1", x).fail(errorCallback1);
-  });
-  $("#save2").on("click", function () {
-    let x = { input: document.getElementById("inputBox2").value };
-    $.post(SERVER_URL + "/blog2", x).fail(errorCallback1);
-  });
-  $("#save3").on("click", function () {
-    let x = { input: document.getElementById("inputBox3").value };
-    $.post(SERVER_URL + "/blog3", x).fail(errorCallback1);
-  });
-}
+// save to the server
+$("#save1").on("click", function () {
+  let x = { id: 1, text: document.getElementById("inputBox1").value };
+  $.post(SERVER_URL + "/blog1", x).fail(errorCallback1);
+});
+$("#save2").on("click", function () {
+  let x = { id: 2, text: document.getElementById("inputBox2").value };
+  $.post(SERVER_URL + "/blog2", x).fail(errorCallback1);
+});
+$("#save3").on("click", function () {
+  let x = { id: 3, text: document.getElementById("inputBox3").value };
+  $.post(SERVER_URL + "/blog3", x).fail(errorCallback1);
+});
 
-// delete blog from local storage
-function cancelBlog() {
-  if (confirm("Are you sure you want to delete the blog entirely?") === true) {
-    if (confirm("This action cannot be undone!") === true) {
-      $("#cancel1").on("click", function () {
-        $.delete(SERVER_URL + "/blog1")
-        .fail(errorCallback1)
-        .reload();
-      });
-      $("#cancel2").on("click", function () {
-        $.delete(SERVER_URL + "/blog2")
-          .fail(errorCallback1)
-          .reload();
-      });
-      $("#cancel3").on("click", function () {
-        $.delete(SERVER_URL + "/blog3")
-          .fail(errorCallback1)
-          .reload();
+var blog1 = $("#inputBox1").val();
+var blogOne = { id: 1, text: blog1 };
+$("#firstPublish").on("click", function () {
+  $.post(SERVER_URL + "/blog1", blogOne).fail(errorCallback1);
+});
+
+$("#cancel1").on("click", function () {
+  if (confirm("Are you sure you want to cancel this blog entirely?") === true) {
+    if (confirm("This action cannot be reversed!") === true) {
+      $.ajax({
+        url: SERVER_URL + "/blog1",
+        type: "DELETE",
+        success: function (result) {
+          console.log("deleted");
+          $("#inputBox1").val("");
+        },
+        error: function () {
+          console.log("not deleted");
+        },
       });
     }
-  }
-}
+  } 
+});
+// $("#cancel1").on("click", function(){
+// $.post(SERVER_URL + "/test").fail(errorCallback1);
+// });
 
-// get the blog from local storage to the input box
-function getBlog(blogID) {
-  document.getElementById("inputBox1").value =
-    window.localStorage.getItem(blogID);
-}
+$("#cancel2").on("click", function () {
+  if (confirm("Are you sure you want to cancel this blog entirely?") === true) {
+    if (confirm("This action cannot be reversed!") === true) {
+      $.ajax({
+        url: SERVER_URL + "/blog2",
+        type: "DELETE",
+        success: function (result) {
+          console.log("deleted");
+          $("#inputBox2").val("");
+        },
+        error: function () {
+          console.log("not deleted");
+        },
+      });
+    }
+  } 
+});
 
+$("#cancel3").on("click", function () {
+  if (confirm("Are you sure you want to cancel this blog entirely?") === true) {
+    if (confirm("This action cannot be reversed!") === true) {
+      $.ajax({
+        url: SERVER_URL + "/blog3",
+        type: "DELETE",
+        success: function (result) {
+          console.log("deleted");
+          $("#inputBox3").val("");
+        },
+        error: function () {
+          console.log("not deleted");
+        },
+      });
+    }
+  } 
+});
+
+// get the blogs from the server
 function getServer1() {
   $.get(SERVER_URL + "/blog", callback1).fail(errorCallback1);
 }
@@ -262,12 +290,15 @@ function show(hidden) {
   }
 }
 
-// function setup(){
-//   $("#save").on("click", function (){
-//     let x = {input: document.getElementById("inputBox").value};
-//      $.post(SERVER_UR + "/inputBox", x).fail(errorCallback1);
-//  });
-// }
+// hides the wordbank button
+function hide1(tohide) {
+  let c = document.getElementById(tohide);
+  if (c.style.display === "none") {
+    c.style.display = "flex";
+  } else {
+    c.style.display = "none";
+  }
+}
 
 function errorCallback1(err) {
   console.log(err.responseText);
@@ -295,10 +326,22 @@ function displayWords() {
     btn.appendChild(t);
     document.body.appendChild(btn);
     btn.className = "wordbutton";
-    btn.onclick = function addWord() {
-      let currChars = $("#inputBox").val();
-      $("#inputBox").val(currChars.concat(t.nodeValue) + " ");
-    };
+    if (inputBoxStatus1) {
+      btn.onclick = function addWord() {
+        let currChars = $("#inputBox1").val();
+        $("#inputBox1").val(currChars.concat(t.nodeValue) + " ");
+      };
+    } else if (inputBoxStatus2) {
+      btn.onclick = function addWord() {
+        let currChars = $("#inputBox2").val();
+        $("#inputBox2").val(currChars.concat(t.nodeValue) + " ");
+      };
+    } else if (inputBoxStatus3) {
+      btn.onclick = function addWord() {
+        let currChars = $("#inputBox3").val();
+        $("#inputBox3").val(currChars.concat(t.nodeValue) + " ");
+      };
+    }
   }
 }
 
