@@ -378,9 +378,8 @@ function saveWords() {
 /*
 this is where the issue is, when the word banks buttons are pressed it only returns the most recent word entered rather than 
 the one specified on the button.
-
-author: Mike Warren
 */
+// author: Mike Warren
 function displayWords() {
   var display = arrayOfWord;
   arrayOfWord = [];
