@@ -1,3 +1,4 @@
+// The main file for connecting to the server and the MonogDB database
 const express = require("express");
 const server = express();
 let mongodb = require("mongodb").MongoClient;

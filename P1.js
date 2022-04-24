@@ -298,7 +298,7 @@ function errorCallback1(err) {
 	toHide1: first edit switch to be hidden.
 	toHide2: second edit switch to be hidden. 
   */
- // author: Alejandro Bensusan, Ali Alhusseini
+ // authors: Alejandro Bensusan, Ali Alhusseini
 function hide(toHide1, toHide2) {
   let x = document.getElementById(toHide1);
   let v = document.getElementById(toHide2);
