@@ -73,7 +73,7 @@ server.delete("/blog3", (req, res) => {
 server.get("/blog", (req, res) => res.status(200).send(blogs));
 
 // display the port the server is listening on
-
+// author: Riley OKeefe
 mongodb.connect(connectionString, function (error, client) {
   if (error) {
     throw error;
@@ -142,6 +142,7 @@ mongodb.connect(connectionString, function (error, client) {
   //
   // If the SIGTERM event occurs, use the anonymous function to
   // close the database and server in a controlled way.
+  // author: Riley Okeefe
   process.on("SIGTERM", function () {
     console.log("Shutting server down.");
     client.close();
