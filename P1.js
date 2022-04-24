@@ -78,7 +78,7 @@ function activeBox(inputBoxID) {
   }
 }
 // add or delete characters to from input area
-// Authors: Mike Warren, Riley O'keefe, Ali Alhusseini
+// Authors: Mike Warren, Riley Okeefe, Ali Alhusseini
 function addChar(selection) {
   if (inputBoxStatus1) {
     let currChars = $("#inputBox1").val();
@@ -127,7 +127,8 @@ function addChar(selection) {
         $("#inputBox3").val(currChars.concat(selection));
       }
     }
-  } else if (wordBankInputStatus) {
+  } 
+  if (wordBankInputStatus) {
     let currChars = $("#wordbankinput").val();
     if (selection === "delete") {
       $("#wordbankinput").val(currChars.substring(0, currChars.length - 1));
