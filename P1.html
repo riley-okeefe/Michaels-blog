@@ -53,7 +53,7 @@
         <div class="col-2">
             <div class="form-check form-switch" id="firstEditSwitch">
                 <input class="form-check-input switchSize" id="first"
-                    onclick="showKeyboard('keyboard', 'inputArea1', 'buttons1'); hide('secondEditSwitch', 'thirdEditSwitch'); hide('secondRow', 'thirdRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
+                    onclick="showKeyboard('keyboard', 'inputArea1', 'buttons1'); hide('secondEditSwitch', 'thirdEditSwitch'); hide('secondRow', 'thirdRow'); showOne('wordbankArea');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -71,7 +71,7 @@
         <div class="col-2">
             <div class="form-check form-switch" id="secondEditSwitch">
                 <input class="form-check-input switchSize" id="second"
-                    onclick="showKeyboard('keyboard', 'inputArea2', 'buttons2'); hide('firstEditSwitch', 'thirdEditSwitch'); hide('firstRow', 'thirdRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
+                    onclick="showKeyboard('keyboard', 'inputArea2', 'buttons2'); hide('firstEditSwitch', 'thirdEditSwitch'); hide('firstRow', 'thirdRow'); showOne('wordbankArea');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -89,7 +89,7 @@
         <div class="col-2">
             <div class="form-check form-switch" id="thirdEditSwitch">
                 <input class="form-check-input switchSize" id="third"
-                    onclick="showKeyboard('keyboard', 'inputArea3', 'buttons3'); hide('firstEditSwitch', 'secondEditSwitch'); hide('firstRow', 'secondRow'); show('wordbankinput'); show('wordbankbutton'); show('displaywordbankbutton');"
+                    onclick="showKeyboard('keyboard', 'inputArea3', 'buttons3'); hide('firstEditSwitch', 'secondEditSwitch'); hide('firstRow', 'secondRow'); showOne('wordbankArea');"
                     type="checkbox" role="switch">
             </div>
         </div>
@@ -126,26 +126,12 @@
         </div>
     </div>
 
-    <!-- The WordBank -->
-    <!--authors: Mike Warren-->
-    <div>
-        <div class="row m-3">
-            <input class="col-2" name="wordbankinput" id="wordbankinput" type="text" style="display: none;" onmouseenter="activeBox('wordbankinput');"></input>
-            <button class="col-2 button" type="button" title="wordbankbutton" id="wordbankbutton" style="display: none;"
-                onclick="saveWords();">Save to WordBank</button>
-            <button class="col-2 button" type="button" title="displaywordbankbutton" id="displaywordbankbutton"
-                style="display: none;"
-                onclick="displayWords();showButtons(); hide('keyboard', 'displaywordbankbutton'); show('deleteButton'); show('keyboardbutton');">
-                <i class="bi bi-bookmark-star"></i>
-                Display WordBank</button>
-            <button class="col-2 button" type="button" title="displaykeyboardbutton" id="keyboardbutton"
-                style="display: none;"
-                onclick="hideButtons(); hide1('keyboardbutton'); show('displaywordbankbutton'); show('keyboard'); hide1('deleteButton');" >
-                <i class="bi bi-keyboard"></i>
-                Display Keyboard</button>
-                <button class="col-2 button" type="button" id="deleteButton" style="display: none;"><i class="bi bi-x-circle-fill"></i>
-                    Delete Words from WordBank</button>
-        </div>
+    <!-- WordBank -->
+    <div id="wordbankArea" style="display: none;">
+        <input type="text" class="inputBox">
+        <button title="Save to Wordbank" type="button" class="button wordbutton">Save to WordBank</button>
+        <button title="Display Wordbank" type="button" class="button wordbutton" id="displayWordbankBtn" onclick="hideOne('keyboard'); showOne('displayKbdBtn')">Display WordBank/Keyboard</button>
+    </div>
     <!-- The on-screen keyboard-->
     <!--authors: Ali Alhusseini, Riley Okeefe-->
     </div>

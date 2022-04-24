@@ -343,7 +343,7 @@ function showKeyboard(kbd, input, buttons) {
 }
 
 // author: Mike Warren
-function show(hidden) {
+function showOne(hidden) {
   let a = document.getElementById(hidden);
   if (a.style.display === "none") {
     a.style.display = "block";
@@ -354,10 +354,10 @@ function show(hidden) {
 
 // hides the wordbank button
 // author: Mike Warren
-function hide1(tohide) {
+function hideOne(tohide) {
   let c = document.getElementById(tohide);
   if (c.style.display === "none") {
-    c.style.display = "flex";
+    c.style.display = "block";
   } else {
     c.style.display = "none";
   }
@@ -380,7 +380,7 @@ function saveWords() {
 this is where the issue is, when the word banks buttons are pressed it only returns the most recent word entered rather than 
 the one specified on the button.
 */
-// author: Mike Warren
+// author: Mike Warren, Riley Okeefe
 function displayWords() {
   var display = arrayOfWord;
   arrayOfWord = [];
@@ -410,23 +410,4 @@ function displayWords() {
   }
 }
 
-// hides wordbank button
-// author: Mike Warren
-function hideButtons() {
-  $(".wordbutton").hide();
-}
-// shows wordbank button
-// author: Mike Warren
-function showButtons() {
-  $(".wordbutton").show();
-}
-// hides a single wordbank button
-// author: Mike Warren
-function hideSingle(shown) {
-  let x = document.getElementById(shown);
-  if (x.style.display === "none") {
-    x.style.display = "flex";
-  } else {
-    x.style.display = "none";
-  }
-}
+
