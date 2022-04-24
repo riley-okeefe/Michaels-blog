@@ -367,7 +367,6 @@ function errorCallback1(err) {
   console.log(err.responseText);
 }
 
-// author: Mike Warren
 function saveWords() {
   var input = document.getElementById("wordbankinput").value;
   if (input.length != 0) {
@@ -380,7 +379,6 @@ function saveWords() {
 this is where the issue is, when the word banks buttons are pressed it only returns the most recent word entered rather than 
 the one specified on the button.
 */
-// author: Mike Warren, Riley Okeefe
 function displayWords() {
   var display = arrayOfWord;
   arrayOfWord = [];
@@ -391,24 +389,54 @@ function displayWords() {
     btn.appendChild(t);
     document.body.appendChild(btn);
     btn.className = "wordbutton";
-    if (inputBoxStatus1) {
-      btn.onclick = function addWord() {
-        let currChars = $("#inputBox1").val();
-        $("#inputBox1").val(currChars.concat(t.nodeValue) + " ");
-      };
-    } else if (inputBoxStatus2) {
-      btn.onclick = function addWord() {
-        let currChars = $("#inputBox2").val();
-        $("#inputBox2").val(currChars.concat(t.nodeValue) + " ");
-      };
-    } else if (inputBoxStatus3) {
-      btn.onclick = function addWord() {
-        let currChars = $("#inputBox3").val();
-        $("#inputBox3").val(currChars.concat(t.nodeValue) + " ");
-      };
-    }
+    btn.onclick = function addWord() {
+      let currChars = $("#inputBox").val();
+      $("#inputBox").val(currChars.concat(t.nodeValue) + " ");
+    };
   }
 }
+
+function saveWords() {
+  var input = document.getElementById("wordbankinput").value;
+  if (input.length != 0) {
+    arrayOfWord.push(input);
+  }
+  document.getElementById("wordbankinput").value = "";
+}
+
+// /*
+// this is where the issue is, when the word banks buttons are pressed it only returns the most recent word entered rather than 
+// the one specified on the button.
+// */
+// // author: Mike Warren, Riley Okeefe
+// function displayWords() {
+//   var display = arrayOfWord;
+//   arrayOfWord = [];
+
+//   for (var i = 0; i < display.length; i++) {
+//     var btn = document.createElement("button");
+//     var t = document.createTextNode(display[i]);
+//     btn.appendChild(t);
+//     document.body.appendChild(btn);
+//     btn.className = "wordbutton";
+//     if (inputBoxStatus1) {
+//       btn.onclick = function addWord() {
+//         let currChars = $("#inputBox1").val();
+//         $("#inputBox1").val(currChars.concat(t.nodeValue) + " ");
+//       };
+//     } else if (inputBoxStatus2) {
+//       btn.onclick = function addWord() {
+//         let currChars = $("#inputBox2").val();
+//         $("#inputBox2").val(currChars.concat(t.nodeValue) + " ");
+//       };
+//     } else if (inputBoxStatus3) {
+//       btn.onclick = function addWord() {
+//         let currChars = $("#inputBox3").val();
+//         $("#inputBox3").val(currChars.concat(t.nodeValue) + " ");
+//       };
+//     }
+//   }
+// }
 
 function showButtons() {
   $(".wordbutton").show();

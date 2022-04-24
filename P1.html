@@ -127,10 +127,40 @@
     </div>
 
     <!-- WordBank -->
+    <!--author: Mike Warren-->
     <div id="wordbankArea" style="display: none;">
+        <!-- <input class="col-2" name="wordbankinput" id="wordbankinput" type="text" style="display: none;" onmouseenter="activeBox('wordbankinput');"></input>
+        <button class="col-2 button" type="button" title="wordbankbutton" id="wordbankbutton" style="display: none;"
+            onclick="saveWords();">Save to WordBank</button>
+        <button class="col-2 button" type="button" title="displaywordbankbutton" id="displaywordbankbutton"
+            style="display: none;"
+            onclick="displayWords();showButtons();hide('keyboard', 'displaywordbankbutton');show('keyboardbutton');">
+            <i class="bi bi-bookmark-star"></i>
+            Display WordBank</button>
+        <button class="col-2 button" type="button" title="displaykeyboardbutton" id="keyboardbutton"
+            style="display: none;"
+            onclick="hideButtons();hideOne('keyboardbutton');show('displaywordbankbutton');show('keyboard');">
+            <i class="bi bi-keyboard"></i>
+            Display Keyboard</button> -->
         <input type="text" class="inputBox" id="wordbankinput" onmouseenter="activeBox('wordbankinput');">
         <button title="Save to Wordbank" type="button" class="button wordbutton" onclick="saveWords();">Save to WordBank</button>
         <button title="Display Wordbank" type="button" class="button wordbutton" id="displayWordbankBtn" onclick="hideOne('keyboard'); showOne('displayKbdBtn');  displayWords(); showButtons();" >Display WordBank/Keyboard</button>
+    </div>
+
+    <div class="row m-3">
+        <input class="col-2" name="wordbankinput" id="wordbankinput" type="text" style="display: none;" onmouseenter="activeBox('wordbankinput');"></input>
+        <button class="col-2 button" type="button" title="wordbankbutton" id="wordbankbutton" style="display: none;"
+            onclick="saveWords();">Save to WordBank</button>
+        <button class="col-2 button" type="button" title="displaywordbankbutton" id="displaywordbankbutton"
+            style="display: none;"
+            onclick="displayWords();showButtons();hide('keyboard', 'displaywordbankbutton');show('keyboardbutton');">
+            <i class="bi bi-bookmark-star"></i>
+            Display WordBank</button>
+        <button class="col-2 button" type="button" title="displaykeyboardbutton" id="keyboardbutton"
+            style="display: none;"
+            onclick="hideButtons();hideSingle('keyboardbutton');show('displaywordbankbutton');show('keyboard');">
+            <i class="bi bi-keyboard"></i>
+            Display Keyboard</button>
     </div>
     <!-- The on-screen keyboard-->
     <!--authors: Ali Alhusseini, Riley Okeefe-->
