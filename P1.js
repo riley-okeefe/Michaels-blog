@@ -20,6 +20,7 @@ let wordBankInputStatus = false;
 var arrayOfWord = [];
 
 // toggle keys
+// author: Ali Alhusseini
 function toggleShift() {
   if (shift === false) {
     shift = true;
@@ -31,6 +32,7 @@ function toggleShift() {
 }
 
 // shift state of keys on the keyboard
+// author: Ali Alhusseini
 function shiftKeys(state) {
   if (state == "true") {
     for (let x = 0; x < keyboardButtons.length; x++) {
@@ -296,6 +298,7 @@ function errorCallback1(err) {
 	toHide1: first edit switch to be hidden.
 	toHide2: second edit switch to be hidden. 
   */
+ // author: Alejandro Bensusan, Ali Alhusseini
 function hide(toHide1, toHide2) {
   let x = document.getElementById(toHide1);
   let v = document.getElementById(toHide2);
@@ -338,6 +341,7 @@ function showKeyboard(kbd, input, buttons) {
   }
 }
 
+// author: Mike Warren
 function show(hidden) {
   let a = document.getElementById(hidden);
   if (a.style.display === "none") {
@@ -348,6 +352,7 @@ function show(hidden) {
 }
 
 // hides the wordbank button
+// author: Mike Warren
 function hide1(tohide) {
   let c = document.getElementById(tohide);
   if (c.style.display === "none") {
@@ -361,6 +366,7 @@ function errorCallback1(err) {
   console.log(err.responseText);
 }
 
+// author: Mike Warren
 function saveWords() {
   var input = document.getElementById("wordbankinput").value;
   if (input.length != 0) {
@@ -372,6 +378,8 @@ function saveWords() {
 /*
 this is where the issue is, when the word banks buttons are pressed it only returns the most recent word entered rather than 
 the one specified on the button.
+
+author: Mike Warren
 */
 function displayWords() {
   var display = arrayOfWord;
@@ -403,14 +411,17 @@ function displayWords() {
 }
 
 // hides wordbank button
+// author: Mike Warren
 function hideButtons() {
   $(".wordbutton").hide();
 }
 // shows wordbank button
+// author: Mike Warren
 function showButtons() {
   $(".wordbutton").show();
 }
 // hides a single wordbank button
+// author: Mike Warren
 function hideSingle(shown) {
   let x = document.getElementById(shown);
   if (x.style.display === "none") {
