@@ -128,9 +128,9 @@
 
     <!-- WordBank -->
     <div id="wordbankArea" style="display: none;">
-        <input type="text" class="inputBox">
-        <button title="Save to Wordbank" type="button" class="button wordbutton">Save to WordBank</button>
-        <button title="Display Wordbank" type="button" class="button wordbutton" id="displayWordbankBtn" onclick="hideOne('keyboard'); showOne('displayKbdBtn')">Display WordBank/Keyboard</button>
+        <input type="text" class="inputBox" id="wordbankinput" onmouseenter="activeBox('wordbankinput');">
+        <button title="Save to Wordbank" type="button" class="button wordbutton" onclick="saveWords();">Save to WordBank</button>
+        <button title="Display Wordbank" type="button" class="button wordbutton" id="displayWordbankBtn" onclick="hideOne('keyboard'); showOne('displayKbdBtn');  displayWords(); showButtons();" >Display WordBank/Keyboard</button>
     </div>
     <!-- The on-screen keyboard-->
     <!--authors: Ali Alhusseini, Riley Okeefe-->

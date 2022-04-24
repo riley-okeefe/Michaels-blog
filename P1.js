@@ -410,4 +410,9 @@ function displayWords() {
   }
 }
 
-
+function showButtons() {
+  $(".wordbutton").show();
+}
+function hideButons(){
+  $(".wordbutton").hide();
+}
