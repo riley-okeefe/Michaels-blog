@@ -44,6 +44,7 @@ function shiftKeys(state) {
 }
 
 // toggle caps lock
+// Author: Ali Alhusseini 
 function toggleCapsLock() {
   if (capsLock === false) {
     capsLock = true;
@@ -58,6 +59,7 @@ function toggleCapsLock() {
   }
 }
 // defines active input box to be used for keyboard input
+// Authors: Mike Warren, Riley O'keefe, Ali Alhusseini 
 function activeBox(inputBoxID) {
   if (inputBoxID === "inputBox1") {
     inputBoxStatus1 = true;
@@ -74,6 +76,7 @@ function activeBox(inputBoxID) {
   }
 }
 // add or delete characters to from input area
+// Authors: Mike Warren, Riley O'keefe, Ali Alhusseini
 function addChar(selection) {
   if (inputBoxStatus1) {
     let currChars = $("#inputBox1").val();
@@ -161,39 +164,46 @@ $("#save3").on("click", function () {
   $.post(SERVER_URL + "/blog3", x).fail(errorCallback1);
 });
 
-// When the first publish button is clicked the contents of the first blog are sent to the database -Riley OKeefe
+// When the first publish button is clicked the contents of the first blog are sent to the database 
+//Author: Riley OKeefe
 $("#firstPublish").on("click", function () {
   var blog1 = $("#inputBox1").val();
   var blogOne = { text: blog1 };
   $.post(SERVER_URL + "/blogs1", blogOne, findCB1).fail(errorCB);
 });
-// When the second publish button is clicked the contents of the second blog are sent to the database -Riley OKeefe
+// When the second publish button is clicked the contents of the second blog are sent to the database 
+//Author: Riley OKeefe
 $("#secondPublish").on("click", function () {
   var blog2 = $("#inputBox2").val();
   var blogTwo = { text: blog2 };
   $.post(SERVER_URL + "/blogs2", blogTwo, findCB2).fail(errorCB);
 });
-// When the third publish button is clicked the contents of the third blog are sent to the database -Riley Okeefe
+// When the third publish button is clicked the contents of the third blog are sent to the database 
+//Author: Riley Okeefe
 $("#thirdPublish").on("click", function () {
   var blog2 = $("#inputBox3").val();
   var blogTwo = { text: blog2 };
   $.post(SERVER_URL + "/blogs3", blogTwo, findCB3).fail(errorCB);
 });
 
-// Performs a callback for the first blog to ensure the server and database are communicating -Riley OKeefe
+// Performs a callback for the first blog to ensure the server and database are communicating
+//Author: Riley OKeefe
 function findCB1(data) {
   console.log("URL ending with /blog1 returned " + data);
 }
-// Performs a callback for the second blog to ensure the server and database are communicating -Riley OKeefe
+// Performs a callback for the second blog to ensure the server and database are communicating 
+//Author: Riley OKeefe
 function findCB2(data) {
   console.log("URL ending with /blog2 returned " + data);
 }
-// Performs a callback for the third blog to ensure the server and database are communicating -Riley OKeefe
+// Performs a callback for the third blog to ensure the server and database are communicating 
+//Author: Riley OKeefe
 function findCB3(data) {
   console.log("URL ending with /blog3 returned " + data);
 }
 
-// Error callback to notify if the server and database are not communicating -Riley OKeefe
+// Error callback to notify if the server and database are not communicating 
+//Author: Riley OKeefe
 function errorCB(err) {
   console.log(err.responseText);
 }
@@ -262,10 +272,13 @@ $("#cancel3").on("click", function () {
 });
 
 // get the blogs from the server
+// Author: Riley OKeefe
 function getServer1() {
   $.get(SERVER_URL + "/blog", callback1).fail(errorCallback1);
 }
 
+// Performs a callback from the server
+// Authors: Ali Alhusseini, Riley OKeefe
 function callback1(returnedData) {
   console.log(returnedData);
   document.getElementById("inputBox1").value = returnedData[0];
