@@ -8,3 +8,5 @@
 > -Riley O'Keefe
 > -Mike Warren
 > -Alejandro Bensusan
+
+![Website Screenshot](https://github.com/ali-alhusseini/P1/blob/master/Pictures/screenshot.png?raw=true)
