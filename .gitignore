@@ -10,3 +10,5 @@
 /P1Server.js
 # Archive files
 /Archives/
+# Other
+/.DS_Store
