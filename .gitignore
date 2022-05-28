@@ -7,7 +7,7 @@
 /dataSources/
 /dataSources.local.xml
 # Server Config
-/P1Server.js
+P1Server.js
 # Archive files
 /Archives/
 # Other
