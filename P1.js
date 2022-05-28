@@ -1,5 +1,4 @@
 /* 
-
   This file defines the functionality of the P1.html file by hiding and showing elements
   on the screen and by saving the blogs to storage and/or the server.
 */
