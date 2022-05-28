@@ -9,4 +9,4 @@
 > -Mike Warren
 > -Alejandro Bensusan
 
-![Website Screenshot](screenshot.png)
+![Website Screenshot](https://github.com/ali-alhusseini/P1/blob/master/Pictures/screenshot.png?raw=true)
