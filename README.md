@@ -8,3 +8,5 @@
 > -Riley O'Keefe
 > -Mike Warren
 > -Alejandro Bensusan
+
+![Website Screenshot](screenshot.png)
