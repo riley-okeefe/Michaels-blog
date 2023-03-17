@@ -15,7 +15,6 @@ let wordBankInputStatus = false;
 var arrayOfWord = [];
 
 // toggle keys
-// author: Ali Alhusseini
 function toggleShift() {
   if (shift === false) {
     shift = true;
@@ -27,7 +26,6 @@ function toggleShift() {
 }
 
 // shift state of keys on the keyboard
-// author: Ali Alhusseini
 function shiftKeys(state) {
   if (state == "true") {
     for (let x = 0; x < keyboardButtons.length; x++) {
@@ -41,7 +39,6 @@ function shiftKeys(state) {
 }
 
 // toggle caps lock
-// Author: Ali Alhusseini 
 function toggleCapsLock() {
   if (capsLock === false) {
     capsLock = true;
@@ -56,7 +53,6 @@ function toggleCapsLock() {
   }
 }
 // defines active input box to be used for keyboard input
-// Authors: Mike Warren, Riley O'keefe, Ali Alhusseini 
 function activeBox(inputBoxID) {
   if (inputBoxID === "inputBox1") {
     inputBoxStatus1 = true;
@@ -73,7 +69,6 @@ function activeBox(inputBoxID) {
   }
 }
 // add or delete characters to from input area
-// Authors: Mike Warren, Riley Okeefe, Ali Alhusseini
 function addChar(selection) {
   if (inputBoxStatus1) {
     let currChars = $("#inputBox1").val();
@@ -142,42 +137,36 @@ function addChar(selection) {
 }
 
 // Saves the contents of the first blog to the server
-// Authors: Ali Alhusseini, Riley OKeefe
 $("#save1").on("click", function () {
   let x = { text: document.getElementById("inputBox1").value };
   $.post(SERVER_URL + "/blog1", x).fail(errorCallback1);
 });
 
 // Saves the contents of the second blog to the server
-// Authors: Ali Alhusseini, Riley OKeefe
 $("#save2").on("click", function () {
   let x = { text: document.getElementById("inputBox2").value };
   $.post(SERVER_URL + "/blog2", x).fail(errorCallback1);
 });
 
 // Saves the contents of the third blog to the server
-// Authors: Ali Alhusseini, Riley OKeefe
 $("#save3").on("click", function () {
   let x = { text: document.getElementById("inputBox3").value };
   $.post(SERVER_URL + "/blog3", x).fail(errorCallback1);
 });
 
 // When the first publish button is clicked the contents of the first blog are sent to the database 
-//Author: Riley OKeefe
 $("#firstPublish").on("click", function () {
   var blog1 = $("#inputBox1").val();
   var blogOne = { text: blog1 };
   $.post(SERVER_URL + "/blogs1", blogOne, findCB1).fail(errorCB);
 });
 // When the second publish button is clicked the contents of the second blog are sent to the database 
-//Author: Riley OKeefe
 $("#secondPublish").on("click", function () {
   var blog2 = $("#inputBox2").val();
   var blogTwo = { text: blog2 };
   $.post(SERVER_URL + "/blogs2", blogTwo, findCB2).fail(errorCB);
 });
 // When the third publish button is clicked the contents of the third blog are sent to the database 
-//Author: Riley Okeefe
 $("#thirdPublish").on("click", function () {
   var blog2 = $("#inputBox3").val();
   var blogTwo = { text: blog2 };
@@ -185,30 +174,25 @@ $("#thirdPublish").on("click", function () {
 });
 
 // Performs a callback for the first blog to ensure the server and database are communicating
-//Author: Riley OKeefe
 function findCB1(data) {
   console.log("URL ending with /blog1 returned " + data);
 }
 // Performs a callback for the second blog to ensure the server and database are communicating 
-//Author: Riley OKeefe
 function findCB2(data) {
   console.log("URL ending with /blog2 returned " + data);
 }
 // Performs a callback for the third blog to ensure the server and database are communicating 
-//Author: Riley OKeefe
 function findCB3(data) {
   console.log("URL ending with /blog3 returned " + data);
 }
 
 // Error callback to notify if the server and database are not communicating 
-//Author: Riley OKeefe
 function errorCB(err) {
   console.log(err.responseText);
 }
 
 // When this cancel button is clicked the page alerts the user twice 
 // then removes the content of the first blog from the server
-// Authors: Ali Alhusseini, Riley OKeefe
 $("#cancel1").on("click", function () {
   if (confirm("Are you sure you want to cancel this blog entirely?") === true) {
     if (confirm("This action cannot be reversed!") === true) {
@@ -229,7 +213,6 @@ $("#cancel1").on("click", function () {
 
 // When this cancel button is clicked the page alerts the user twice 
 // then removes the content of the second blog from the server
-// Authors: Ali Alhusseini, Riley OKeefe
 $("#cancel2").on("click", function () {
   if (confirm("Are you sure you want to cancel this blog entirely?") === true) {
     if (confirm("This action cannot be reversed!") === true) {
@@ -250,7 +233,6 @@ $("#cancel2").on("click", function () {
 
 // When this cancel button is clicked the page alerts the user twice 
 // then removes the content of the third blog from the server
-// Authors: Ali Alhusseini, Riley OKeefe
 $("#cancel3").on("click", function () {
   if (confirm("Are you sure you want to cancel this blog entirely?") === true) {
     if (confirm("This action cannot be reversed!") === true) {
@@ -270,13 +252,11 @@ $("#cancel3").on("click", function () {
 });
 
 // get the blogs from the server
-// Author: Riley OKeefe
 function getServer1() {
   $.get(SERVER_URL + "/blog", callback1).fail(errorCallback1);
 }
 
 // Performs a callback from the server
-// Authors: Ali Alhusseini, Riley OKeefe
 function callback1(returnedData) {
   console.log(returnedData);
   document.getElementById("inputBox1").value = returnedData[0];
@@ -294,7 +274,6 @@ function errorCallback1(err) {
 	toHide1: first edit switch to be hidden.
 	toHide2: second edit switch to be hidden. 
   */
- // authors: Alejandro Bensusan, Ali Alhusseini
 function hide(toHide1, toHide2) {
   let x = document.getElementById(toHide1);
   let v = document.getElementById(toHide2);
@@ -337,7 +316,6 @@ function showKeyboard(kbd, input, buttons) {
   }
 }
 
-// author: Mike Warren
 function showOne(hidden) {
   let a = document.getElementById(hidden);
   if (a.style.display === "none") {
@@ -348,7 +326,6 @@ function showOne(hidden) {
 }
 
 // hides the wordbank button
-// author: Mike Warren
 function hideOne(tohide) {
   let c = document.getElementById(tohide);
   if (c.style.display === "none") {
@@ -403,7 +380,6 @@ function saveWords() {
 // this is where the issue is, when the word banks buttons are pressed it only returns the most recent word entered rather than 
 // the one specified on the button.
 // */
-// // author: Mike Warren, Riley Okeefe
 // function displayWords() {
 //   var display = arrayOfWord;
 //   arrayOfWord = [];
